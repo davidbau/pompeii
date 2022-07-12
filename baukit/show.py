@@ -143,6 +143,13 @@ class Style(dict):
     def __str__(self):
         return ';'.join(f'{k}:{styleValue(v, k)}'
                 for k, v in self.items() if v is not None)
+    def __add__(self, other):
+
+        new_style = Style()
+        new_style.update(self)
+        new_style.update(other)
+
+        return new_style
 
 def style(*args, **kwargs):
     return Style(*args, **kwargs)
@@ -156,6 +163,13 @@ class Attr(dict):
     def __str__(self):
         return ''.join(f' {k}' if v is None else f' {k}="{escape(str(v))}"'
                 for k, v in self.items())
+    def __add__(self, other):
+
+        new_attr = Attr()
+        new_attr.update(self)
+        new_attr.update(other)
+
+        return new_attr
 
 def attr(*args, **kwargs):
     return Attr(*args, **kwargs)

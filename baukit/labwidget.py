@@ -182,7 +182,7 @@ class Widget(Model):
     for the top-level widget element.
     '''
 
-    def __init__(self, style=None):
+    def __init__(self, style=None, attrs=None):
         # In the jupyter case, there can be some delay between js injection
         # and comm creation, so we need to queue some initial messages.
         if WIDGET_ENV == 'jupyter':
@@ -199,6 +199,7 @@ class Widget(Model):
         # The style and data properties come standard, and are used to
         # control the style and data attributes on the toplevel element.
         self.style = Property(style)
+        self.attrs = Property(attrs)
         # Each widget has a "write" event that is used to insert
         # html before the widget.
         self.write = Trigger()
@@ -255,9 +256,12 @@ class Widget(Model):
           }});
           function upd(a) {{ return (e) => {{ for (k in e.value) {{
             element[a][k] = e.value[k];
-          }}}}}}
+          }}}}}};
+          function upda(a) {{ return (e) => {{ for (k in e.value) {{
+            element.setAttribute(k, e.value[k]);;
+          }}}}}};
           model.on('style', upd('style'));
-          model.on('style', upd('style'));
+          model.on('attrs', upda('attrs'));
           model.on('data', upd('dataset'));
         ''')
 
@@ -543,7 +547,12 @@ class capture_output(object):
 
 class Button(Widget):
     def __init__(self, label='button', style=None, **kwargs):
-        super().__init__(style=defaulted(style, display='block'), **kwargs)
+
+        default_style = show.Style(display='block')
+        if style:
+          default_style += style
+
+        super().__init__(style=default_style, **kwargs)
         self.click = Trigger()
         self.label = Property(label)
 
@@ -558,8 +567,7 @@ class Button(Widget):
         ''')
 
     def widget_html(self):
-        return show.emit('input', self.std_attrs(),
-                    type='button', value=self.label)
+        return show.emit('input', self.std_attrs(), self.style, self.attrs, type='button', value=self.label)
 
 class Label(Widget):
     def __init__(self, value='', **kwargs):
@@ -588,6 +596,8 @@ class Textbox(Widget):
     def __init__(self, value='', size=20, style=None, **kwargs):
         super().__init__(style=defaulted(style, display='inline-block'), **kwargs)
         # databinding is defined using Property objects.
+        self.enter = Trigger()
+        self.change = Trigger()
         self.value = Property(value)
         self.size = Property(size)
 
@@ -598,10 +608,19 @@ class Textbox(Widget):
         return minify('''
           element.value = model.get('value');
           element.size = model.get('size');
+
           element.addEventListener('keydown', (e) => {
             if (e.code == 'Enter') {
               model.set('value', element.value);
             }
+          });
+          element.addEventListener('keydown', (e) => {
+            if (e.code == 'Enter') {
+              model.trigger('enter')
+            }
+          });
+          element.addEventListener('change', (e) => {
+            model.trigger('change')
           });
           element.addEventListener('blur', (e) => {
             model.set('value', element.value);
@@ -657,6 +676,8 @@ class Textarea(Widget):
     def __init__(self, value='', style=None, **kwargs):
         super().__init__(style=defaulted(style, display='inline-block'), **kwargs)
         # databinding is defined using Property objects.
+        self.enter = Trigger()
+        self.change = Trigger()
         self.value = Property(value)
 
     def widget_js(self):
@@ -669,6 +690,14 @@ class Textarea(Widget):
             if (e.code == 'Enter') {
               model.set('value', element.value);
             }
+          });
+          element.addEventListener('keydown', (e) => {
+            if (e.code == 'Enter') {
+              model.trigger('enter')
+            }
+          });
+          element.addEventListener('change', (e) => {
+            model.trigger('change')
           });
           element.addEventListener('blur', (e) => {
             model.set('value', element.value);
@@ -957,8 +986,8 @@ class Div(Widget):
 
     def widget_html(self):
         out = []
-        with show.enter(self.std_attrs(), out=out):
-            out.append(self.innerHTML);
+        with show.enter(self.std_attrs(), self.style, self.attrs, out=out):
+            out.append(self.innerHTML)
         return ''.join(out)
 
 
