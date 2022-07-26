@@ -198,7 +198,7 @@ class LogitLensSession:
 
         self.model = rewrite(layers, token.value, token_input.value, self.prompt, self.model, self.tokenizer, self.model_name)
         
-        self.run_logit_lens(self, self.prompt, topk=5)
+        self.run_logit_lens(self, self.prompt)
 
     def display_logit_lens(self):
 
