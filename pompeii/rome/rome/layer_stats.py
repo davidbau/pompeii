@@ -132,7 +132,7 @@ def layer_stats(
     ds = get_ds() if not filename.exists() else None
 
     if progress is None:
-        progress = lambda x: x
+        progress = lambda x, total: x
 
     stat = CombinedStat(**{k: STAT_TYPES[k]() for k in to_collect})
     loader = tally(

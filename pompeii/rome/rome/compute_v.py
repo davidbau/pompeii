@@ -38,7 +38,7 @@ def compute_v(
     logging.info("Computing right vector (v)")
 
     # Tokenize target into list of int token IDs
-    target_ids = tok(request["target_new"]["str"], return_tensors="pt").to("cuda")[
+    target_ids = tok(request["target"], return_tensors="pt").to("cuda")[
         "input_ids"
     ][0]
 
@@ -50,7 +50,7 @@ def compute_v(
     all_prompts = rewriting_prompts + kl_prompts
 
     input_tok = tok(
-        [prompt.format(request["subject"]) for prompt in all_prompts],
+        [prompt.format(request["token_text"]) for prompt in all_prompts],
         return_tensors="pt",
         padding=True,
     ).to("cuda")
@@ -64,12 +64,7 @@ def compute_v(
         rewriting_targets[i, ex_len - len(target_ids) : ex_len] = target_ids
 
     # Compute indices of the tokens where the fact is looked up
-    lookup_idxs = [
-        find_fact_lookup_idx(
-            prompt, request["subject"], tok, hparams.fact_token, verbose=(i == 0)
-        )
-        for i, prompt in enumerate(all_prompts)
-    ]
+    lookup_idxs = [request['token_idx_inverse']] * (len(all_prompts) - 1) + [request['token_idx']]
 
     # Finalize rewrite and loss layers
     loss_layer = max(hparams.v_loss_layer, layer)
@@ -156,7 +151,7 @@ def compute_v(
         loss = nll_loss + kl_loss + weight_decay
         logging.info(
             f"loss {np.round(loss.item(), 3)} = {np.round(nll_loss.item(), 3)} + {np.round(kl_loss.item(), 3)} + {np.round(weight_decay.item(), 3)} "
-            f"avg prob of [{request['target_new']['str']}] "
+            f"avg prob of [{request['target']}] "
             f"{torch.exp(-nll_loss_each).mean().item()}"
         )
         if loss < 5e-2:
@@ -185,9 +180,9 @@ def compute_v(
         tok,
         layer,
         context_template=request["prompt"],
-        word=request["subject"],
-        module_template=hparams.rewrite_module_tmp,
-        fact_token_strategy=hparams.fact_token,
+        word=request["token_text"],
+        word_idx=request['token_idx'],
+        module_template=hparams.rewrite_module_tmp
     )
 
     # Solving the linear system to compute the right vector
@@ -208,8 +203,8 @@ def get_module_input_output_at_word(
     layer: int,
     context_template: str,
     word: str,
+    word_idx: int,
     module_template: str,
-    fact_token_strategy: str,
 ) -> Tuple[torch.Tensor]:
     """
     Retrieves detached representations for a word at the input and
@@ -222,31 +217,18 @@ def get_module_input_output_at_word(
         layer=layer,
         module_template=module_template,
     )
-    if "subject_" in fact_token_strategy and fact_token_strategy.index("subject_") == 0:
-        context_info = dict(
-            context_template=context_template,
-            word=word,
-        )
-        subtoken = fact_token_strategy[len("subject_") :]
-        l_input = repr_tools.get_repr_at_word_token(
-            track="in", subtoken=subtoken, **context_info, **word_repr_args
-        )
-        l_output = repr_tools.get_repr_at_word_token(
-            track="out", subtoken=subtoken, **context_info, **word_repr_args
-        )
-    elif fact_token_strategy == "last":
-        context_info = dict(
-            context=context_template.format(word),
-            idxs=[-1],
-        )
-        l_input = repr_tools.get_repr_at_idxs(
-            track="in", **context_info, **word_repr_args
-        )
-        l_output = repr_tools.get_repr_at_idxs(
-            track="out", **context_info, **word_repr_args
-        )
-    else:
-        raise ValueError(f"fact_token={fact_token_strategy} not recognized")
+    
+    context_info = dict(
+        context=context_template.format(word),
+        idxs=[word_idx],
+    )
+    l_input = repr_tools.get_repr_at_idxs(
+        track="in", **context_info, **word_repr_args
+    )
+    l_output = repr_tools.get_repr_at_idxs(
+        track="out", **context_info, **word_repr_args
+    )
+   
 
     return l_input.detach(), l_output.detach()
 

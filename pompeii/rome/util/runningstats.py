@@ -41,6 +41,7 @@ compute the statistic, adopting the convention that cached stats are
 saved to and loaded from numpy npz files.
 """
 
+import logging
 import math
 import os
 import random
@@ -1489,7 +1490,7 @@ def load_cached_state(cachefile, args, quiet=False, throw=False):
         return None
     else:
         if not quiet:
-            print("Loading cached %s" % cachefile)
+            logging.info("Loading cached %s" % cachefile)
         return dat
 
 

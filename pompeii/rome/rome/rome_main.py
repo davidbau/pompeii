@@ -64,14 +64,27 @@ def execute_rome(
     Invariant: model at beginning of function == model at end of function
     """
 
+    tokenized = tok(request['prompt'])['input_ids']
+    decoded = [tok.decode(token) for token in tokenized]
+    token_text = decoded[request['token_idx']]
+    decoded[request['token_idx']] = '{}'
+    prompt = ''.join(decoded)
+
+    request['token_text'] = token_text
+    request['token_idx_inverse'] = -(len(tokenized) - request['token_idx'])
+    request['prompt'] = prompt
+
+    if prompt[-1] != ' ':
+        prompt += ' '
+
     # Update target and print info
     request = deepcopy(request)
-    if request["target_new"]["str"][0] != " ":
+    if request["target"][0] != " ":
         # Space required for correct tokenization
-        request["target_new"]["str"] = " " + request["target_new"]["str"]
+        request["target"] = " " + request["target"]
     logging.info(
         f"Executing ROME algorithm for the update: "
-        f"[{request['prompt'].format(request['subject'])}] -> [{request['target_new']['str']}]"
+        f"[{request['prompt']}] -> [{request['target']}]"
     )
 
     # Retrieve weights that user desires to change
@@ -91,7 +104,7 @@ def execute_rome(
         left_vector: torch.Tensor = compute_u(
             model, tok, request, hparams, layer, get_context_templates(model, tok)
         )
-        logging.info("Left vector shape:", left_vector.shape)
+        logging.info(f"Left vector shape: {left_vector.shape}")
         right_vector: torch.Tensor = compute_v(
             model,
             tok,
@@ -101,7 +114,7 @@ def execute_rome(
             left_vector,
             get_context_templates(model, tok),
         )
-        logging.info("Right vector shape:", right_vector.shape)
+        logging.info(f"Right vector shape: {right_vector.shape}")
 
         with torch.no_grad():
             # Determine correct transposition of delta matrix

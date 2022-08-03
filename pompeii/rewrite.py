@@ -1,12 +1,10 @@
 
 import os
 
-from _rome.rome import ROMEHyperParams, apply_rome_to_model
-from _rome.util import nethook
+from rome.rome import ROMEHyperParams, apply_rome_to_model
+from rome.util import nethook
 
-def rewrite(layers, token, target, prompt, model, tokenizer, model_name):
-
-    copy = False
+def rewrite(layers, token_idx, target, prompt, model, tokenizer, model_name):
 
     nethook.set_requires_grad(True, model)
 
@@ -15,19 +13,10 @@ def rewrite(layers, token, target, prompt, model, tokenizer, model_name):
     hparams = ROMEHyperParams.from_json(hyperparams_path)
     hparams.layers = layers
 
-    prompt = prompt.replace(token, '{}')
-
-    if prompt[-1] != ' ':
-        prompt += ' '
-
-    print(prompt)
-
     request = {
         "prompt": prompt,
-        "subject": token,
-        "target_new": {
-            "str": target
-        }
+        "token_idx" :token_idx,
+        "target": target
     }
 
     edited_model, orig_weights = apply_rome_to_model(
