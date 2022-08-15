@@ -4,7 +4,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 import baukit
-from rome.util import nethook
+from .rome.util import nethook
 
 
 def get_model_tokenizer(model_name):

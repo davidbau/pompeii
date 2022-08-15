@@ -1,14 +1,16 @@
 
 import os
+from pathlib import Path
 
-from rome.rome import ROMEHyperParams, apply_rome_to_model
-from rome.util import nethook
+from .rome.rome import ROMEHyperParams, apply_rome_to_model
+from .rome.util import nethook
+
 
 def rewrite(layers, token_idx, target, prompt, model, tokenizer, model_name):
 
     nethook.set_requires_grad(True, model)
 
-    hyperparams_path = os.path.join("rome/hparams", "ROME", f"{model_name}.json")
+    hyperparams_path = os.path.join(Path(__file__).parent.resolve(), "rome/hparams", "ROME", f"{model_name}.json")
 
     hparams = ROMEHyperParams.from_json(hyperparams_path)
     hparams.layers = layers
@@ -24,7 +26,7 @@ def rewrite(layers, token_idx, target, prompt, model, tokenizer, model_name):
         tokenizer, 
         request, 
         hparams, 
-        return_orig_weights=False
+        copy=True
     )
 
     return edited_model

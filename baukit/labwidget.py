@@ -880,6 +880,7 @@ class Datalist(Widget):
         super().__init__(**kwargs)
         if choices is None:
             choices = []
+        self.change = Trigger()
         self.choices = Property(choices)
         self.value = Property(value)
 
@@ -924,6 +925,9 @@ class Datalist(Widget):
           element.inp.addEventListener('mouseleave', restoreValue)
           element.inp.addEventListener('change', (e) => {
             model.set('value', element.inp.value);
+          });
+          element.addEventListener('change', (e) => {
+            model.trigger('change')
           });
         ''')
 

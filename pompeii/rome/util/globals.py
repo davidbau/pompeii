@@ -1,7 +1,8 @@
 import yaml
 from pathlib import Path
+import os
 
-with open("rome/globals.yml", "r") as stream:
+with open(os.path.join(Path(__file__).parent.parent.resolve(), 'globals.yml'), "r") as stream:
     data = yaml.safe_load(stream)
 
 (RESULTS_DIR, DATA_DIR, STATS_DIR, HPARAMS_DIR,) = (

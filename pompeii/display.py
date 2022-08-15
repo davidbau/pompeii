@@ -1,3 +1,4 @@
+from decimal import Overflow
 import logging
 import logging.config
 import os
@@ -7,8 +8,8 @@ from functools import partial
 import torch
 
 import baukit
-import logitlens
-from rewrite import rewrite
+from . import logitlens
+from .rewrite import rewrite
 
 
 class LogitLensSession:
@@ -30,8 +31,7 @@ class LogitLensSession:
         self.model, self.tokenizer = logitlens.get_model_tokenizer(model_name)
         self.decoder = torch.nn.Sequential(self.model.transformer.ln_f, self.model.lm_head)
 
-        self.default_style = baukit.show.Style(color='black')
-        self.default_style.update({'text-align' : 'center'})
+        self.default_style = baukit.show.Style({'text-align' : 'center'}, color='black', display='block', overflow='hidden')
         self.bold_style = self.default_style + baukit.show.Style(fontWeight='bold')
 
         self.prompt = None
@@ -39,20 +39,31 @@ class LogitLensSession:
 
         self.model_rewrite = None
 
+        def hover(probabilities, words):
+            lines = []
+            for probability, word in zip(probabilities, words):
+                lines.append(f'{word}: prob {probability:.2f}')
+            return baukit.show.Attr(title='\n'.join(lines))
+
+        self.hover = hover
+
+
         self.__init_layout__()
       
     def __init_layout__(self):
 
         self.text_input = baukit.Textbox()
-        self.hidden_state_function_dropdown = baukit.Datalist(choices=["Layer", "Layer Delta", "MLP", "Attn"], value="Layer")
+        self.hidden_state_function_dropdown = baukit.Datalist(choices=["Layer", "Layer Delta", "MLP", "Attn"], value="Layer").on('change', self.hidden_state_change)
         self.run_button = baukit.Button('Run').on('click', self.run)
         self.logit_lens = baukit.Div()
         self.rewrite_button = baukit.Button('Start rewrite', style=baukit.show.Style(display='none')).on('click', self.rewrite_select_layers)
-        self.rewrite_info = baukit.Div(style=self.default_style)
+        rwi_style = baukit.show.Style({'font-size': '18px'}) + self.default_style
+        self.rewrite_info = baukit.Div(style=rwi_style)
 
         baukit.show(
-            [[self.text_input, self.hidden_state_function_dropdown, self.run_button]], 
+            [[self.text_input, self.run_button, self.hidden_state_function_dropdown]], 
             [[self.rewrite_button, self.rewrite_info]], 
+            baukit.show.Style(overflow='scroll'),
             self.logit_lens
         )
 
@@ -115,7 +126,8 @@ class LogitLensSession:
         self.rewrite_button.label = 'Finish Selection'
         self.rewrite_button.off('click')
         self.rewrite_button.on('click', partial(self.rewrite_select_token, layers))
-        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
+
+        self.display()
 
     def rewrite_select_token(self, layers):
 
@@ -147,7 +159,7 @@ class LogitLensSession:
         self.rewrite_button.off('click')
         self.rewrite_button.on('click', partial(self.rewrite_select_location, layers, token))
         
-        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
+        self.display()
 
     def rewrite_select_location(self, layers, token):
 
@@ -171,7 +183,7 @@ class LogitLensSession:
         
         self.rewrite_button.style += baukit.show.Style(display='none')
         
-        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
+        self.display()
     
     def rewrite_select_new_token(self, layers, token, row_idx, column_idx):
         
@@ -200,7 +212,7 @@ class LogitLensSession:
         self.rewrite_button.style += baukit.show.Style(display='block')
         self.rewrite_button.label = 'Rewrite'
 
-        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
+        self.display()
 
     def rewrite(self, token_input, layers, token, rome_location):
 
@@ -211,7 +223,7 @@ class LogitLensSession:
 
         rome_layer_idx, rome_token_idx = rome_location
 
-        self.logit_lens_layout[1][rome_layer_idx][rome_token_idx+1] = baukit.Div(token_input.value, style=token_input.style, attrs=token_input.attrs)
+        #self.logit_lens_layout[1][rome_layer_idx][rome_token_idx+1] = baukit.Div(token_input.value, style=self.default_style + self.color_fn(1.0), attrs=token_input.attrs)
 
         self.model_rewrite = rewrite(layers, token.idx, token_input.value, self.prompt, self.model, self.tokenizer, self.model_name)
         
@@ -219,19 +231,27 @@ class LogitLensSession:
 
         self.display_logit_lens_rewrite(top_probs, top_words)
 
+        self.display()
+
     def display_logit_lens_rewrite(self, top_probs, top_words):
 
         for i, row in enumerate(self.logit_lens_layout[1]):
+
+            _row = [row[0]]
+
             for ii, div in enumerate(row):
                 if ii == 0:
                     continue
 
-                div = baukit.Div(top_words[i][ii-1][0], style=self.default_style + self.color_fn(top_probs[i][ii-1][0]) + baukit.show.Style({'overflow' : 'hidden'}), attrs=self.hover(top_probs[i][ii-1], top_words[i][ii-1]) + baukit.show.Attr(layer_idx=i, token_idx=ii-1))
+                style = baukit.show.Style({'border-bottom' : '4px solid #FFFF00'}) + self.default_style + self.color_fn(top_probs[i][ii-1][0])
 
-                row[ii] = [[[row[ii]], [div]]]
+                div = baukit.Div(top_words[i][ii-1][0], style=style, attrs=self.hover(top_probs[i][ii-1], top_words[i][ii-1]) + baukit.show.Attr(layer_idx=i, token_idx=ii-1))
 
-        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
-        self.rewrite_info.innerHTML = 'Rewriting...'
+                _row.extend([row[ii], div])
+
+            self.logit_lens_layout[1][i] = _row
+
+        self.rewrite_info.innerHTML = ''
 
     def display_logit_lens(self, top_probs, top_words):
 
@@ -242,23 +262,26 @@ class LogitLensSession:
 
         logit_lens_layout = [header_line,
             # body
-            [
-                # first column
-                [baukit.Div(str(layer), style=self.bold_style + baukit.show.Style({'border-style' : 'solid'}))] +
-                [
-                    baukit.Div(_words[0], style=self.default_style + self.color_fn(_probabilites[0]), attrs=self.hover(_probabilites, _words) + baukit.show.Attr(layer_idx=layer, token_idx=token_idx))
-                    for token_idx, (_probabilites, _words) in enumerate(zip(probabilites, words))
-                ]
-            for layer, probabilites, words in zip(range(top_probs.shape[0]), top_probs, top_words)],
+            [[baukit.Div(str(layer), style=self.bold_style + baukit.show.Style({'border-style' : 'solid'}))]
+            for layer in range(top_probs.shape[0])],
             header_line
             ]
 
         self.logit_lens_layout = logit_lens_layout
+        self.display_logit_lens_inner(top_probs, top_words)
 
-        self.logit_lens.innerHTML = baukit.show.html(*logit_lens_layout)
-        self.rewrite_button.style = baukit.show.style(display='block')
+    def display_logit_lens_inner(self, top_probs, top_words):
 
-    def run(self):
+        for layer, probabilites, words in zip(range(top_probs.shape[0]), top_probs, top_words):
+
+            cells = []
+            for token_idx, (_probabilites, _words) in enumerate(zip(probabilites, words)):
+                div = baukit.Div(_words[0], style=self.default_style + self.color_fn(_probabilites[0]), attrs=self.hover(_probabilites, _words) + baukit.show.Attr(layer_idx=layer, token_idx=token_idx))
+                cells.append(div)
+
+            self.logit_lens_layout[1][layer].extend(cells)
+
+    def hidden_state_change(self):
 
         if self.hidden_state_function_dropdown.value == "Layer":
             self.color = [0, 0, 255]
@@ -273,27 +296,38 @@ class LogitLensSession:
             self.color = [255, 0, 0]
             self.hidden_state_function = logitlens.get_hidden_state_attn
 
-
         def color_fn(p):
             a = [int(255 * (1-p) + c * p) for c in self.color]
             return baukit.show.style(background=f'rgb({a[0]}, {a[1]}, {a[2]})')
 
         self.color_fn = color_fn
 
-        def hover(probabilities, words):
-            lines = []
-            for probability, word in zip(probabilities, words):
-                lines.append(f'{word}: prob {probability:.2f}')
-            return baukit.show.Attr(title='\n'.join(lines))
-
-        self.hover = hover
-
-        self.prompt = self.text_input.value
-        self.prompt_tokens = [self.tokenizer.decode(token) for token in self.tokenizer.encode(self.prompt)]
+        if self.prompt:
+            self.update()
+            
+    def update(self):
 
         hidden_states, top_probs, top_words = self.process(self.model)
 
         self.display_logit_lens(top_probs, top_words)
+
+        if self.model_rewrite:
+
+            hidden_states, top_probs, top_words = self.process(self.model_rewrite)
+            self.display_logit_lens_rewrite(top_probs, top_words)
+
+        self.display()
+
+    def run(self):
+
+        self.model_rewrite = None
+
+        self.rewrite_button.style = baukit.show.style(display='block')
+
+        self.prompt = self.text_input.value
+        self.prompt_tokens = [self.tokenizer.decode(token) for token in self.tokenizer.encode(self.prompt)]
+
+        self.hidden_state_change()
 
     def process(self, model, topk=5):
 
@@ -313,6 +347,9 @@ class LogitLensSession:
             top_words = [[[self.tokenizer.decode(token) for token in _tokens] for _tokens in tokens] for tokens in top_tokens]
 
         return hidden_states, top_probs, top_words
+
+    def display(self):
+        self.logit_lens.innerHTML = baukit.show.html(*self.logit_lens_layout)
 
 
 def generate(model, tokenizer, text, num_generation=10):

@@ -236,11 +236,11 @@ def inherit_value(top, inner='inherit'):
 # This is the default loop for nesting children: horizontal layout by default,
 # and then vertical layout for nested arrays; then horizontal within those, etc.
 V = Tag(
-        style(display='flex', flex='1', flexFlow='column',
+        style(display='flex', flex='1 1 0', flexFlow='column',
             gap=inherit_value(3)))
 
 H = Tag(
-        style(display='flex', flex='1', flexFlow='row wrap',
+        style(display='flex', flex='1 1 0', flexFlow='row',
             gap=inherit_value(3)),
         ChildTag(V))
 V.update(ChildTag(H))
