@@ -223,7 +223,7 @@ class LogitLensSession:
 
         rome_layer_idx, rome_token_idx = rome_location
 
-        #self.logit_lens_layout[1][rome_layer_idx][rome_token_idx+1] = baukit.Div(token_input.value, style=self.default_style + self.color_fn(1.0), attrs=token_input.attrs)
+        self.logit_lens_layout[1][rome_layer_idx][rome_token_idx+1] = baukit.Div(token_input.value, style=self.default_style + self.color_fn(1.0), attrs=token_input.attrs)
 
         self.model_rewrite = rewrite(layers, token.idx, token_input.value, self.prompt, self.model, self.tokenizer, self.model_name)
         
