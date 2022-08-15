@@ -1,0 +1,619 @@
+14:51:23,139 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:51:23,294 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/config.json HTTP/1.1" 200 0
+14:51:23,386 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:51:33,520 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+14:51:42,833 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:51:52,998 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+14:51:53,0 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:03,171 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/config.json HTTP/1.1" 200 0
+14:52:03,176 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:13,313 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+14:52:13,315 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:23,449 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/vocab.json HTTP/1.1" 200 0
+14:52:23,600 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:33,749 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/merges.txt HTTP/1.1" 200 0
+14:52:33,752 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:33,893 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/tokenizer.json HTTP/1.1" 200 0
+14:52:33,896 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:34,29 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/added_tokens.json HTTP/1.1" 404 0
+14:52:34,32 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:34,154 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+14:52:34,157 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:34,278 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+14:52:34,281 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): huggingface.co:443
+14:52:34,403 urllib3.connectionpool DEBUG https://huggingface.co:443 "HEAD /gpt2-xl/resolve/main/config.json HTTP/1.1" 200 0
+14:53:06,765 root INFO Executing ROME algorithm for the update: [The Eiffel Tower is in the city of ] -> [ Rome]
+14:53:07,42 root INFO Cached context templates ['{}', 'The first time I. {}', 'In the past,. {}', 'The UESP. {}', 'A new study suggests. {}', 'The following blog post. {}', '"I\'m not. {}', 'A new study has. {}', 'The first time I. {}', 'I have been a. {}', 'The new year is. {}', 'The following are the top ten players of the. {}', "I've been working on a lot of things. {}", 'In a recent article on the subject of how. {}', "I'm sure many of you are familiar with. {}", '"The only people who are really going to. {}', 'In a recent article in The New Yorker,. {}', 'The first thing you notice about "The Martian. {}', 'The following is a statement released today from the. {}', 'In a recent article in The Guardian, the. {}', '"I think it is a little bit unfair. {}']
+14:53:07,42 root INFO Computing left vector (u)...
+14:53:07,42 root INFO Selected u projection object el
+14:53:07,422 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+14:53:07,792 root INFO Computing right vector (v)
+14:53:07,801 root INFO Rewrite layer is 17
+14:53:07,801 root INFO Tying optimization objective to 47
+14:53:07,810 root INFO Recording initial value of v*
+14:53:07,951 root INFO loss 15.691 = 15.691 + 0.0 + 0.0 avg prob of [ Rome] 2.562909457992646e-07
+14:53:08,249 root INFO loss 13.774 = 13.761 + 0.002 + 0.011 avg prob of [ Rome] 1.7330795571979252e-06
+14:53:08,447 root INFO loss 11.26 = 11.235 + 0.006 + 0.019 avg prob of [ Rome] 2.159647920052521e-05
+14:53:08,643 root INFO loss 9.248 = 9.212 + 0.011 + 0.026 avg prob of [ Rome] 0.00013668541214428842
+14:53:08,840 root INFO loss 8.024 = 7.977 + 0.015 + 0.032 avg prob of [ Rome] 0.0004227060417179018
+14:53:09,37 root INFO loss 6.707 = 6.65 + 0.019 + 0.037 avg prob of [ Rome] 0.001503971521742642
+14:53:09,233 root INFO loss 4.939 = 4.875 + 0.022 + 0.042 avg prob of [ Rome] 0.008585031144320965
+14:53:09,430 root INFO loss 2.947 = 2.876 + 0.024 + 0.047 avg prob of [ Rome] 0.0614221952855587
+14:53:09,627 root INFO loss 1.305 = 1.227 + 0.026 + 0.051 avg prob of [ Rome] 0.30504265427589417
+14:53:09,823 root INFO loss 0.483 = 0.398 + 0.028 + 0.056 avg prob of [ Rome] 0.6772986650466919
+14:53:10,21 root INFO loss 0.224 = 0.133 + 0.03 + 0.061 avg prob of [ Rome] 0.8765767812728882
+14:53:10,218 root INFO loss 0.151 = 0.054 + 0.032 + 0.065 avg prob of [ Rome] 0.9478076696395874
+14:53:10,415 root INFO loss 0.131 = 0.033 + 0.032 + 0.066 avg prob of [ Rome] 0.9680556654930115
+14:53:10,612 root INFO loss 0.121 = 0.023 + 0.032 + 0.066 avg prob of [ Rome] 0.9772628545761108
+14:53:10,808 root INFO loss 0.116 = 0.018 + 0.032 + 0.066 avg prob of [ Rome] 0.9825075268745422
+14:53:11,5 root INFO loss 0.112 = 0.014 + 0.032 + 0.066 avg prob of [ Rome] 0.9857714772224426
+14:53:11,201 root INFO loss 0.11 = 0.012 + 0.032 + 0.066 avg prob of [ Rome] 0.9879922866821289
+14:53:11,397 root INFO loss 0.108 = 0.01 + 0.031 + 0.066 avg prob of [ Rome] 0.9896489381790161
+14:53:11,593 root INFO loss 0.106 = 0.009 + 0.031 + 0.066 avg prob of [ Rome] 0.9909982681274414
+14:53:11,790 root INFO loss 0.105 = 0.008 + 0.031 + 0.066 avg prob of [ Rome] 0.9921765923500061
+14:53:11,827 root INFO Delta norm: 121.19000244140625
+14:53:11,827 root INFO Change in target norm: 30.297500610351562 to 124.50466918945312 => 94.20716857910156
+14:53:11,827 root INFO Division Factor: 16.495407104492188
+14:53:11,827 root INFO Right vector norm: 7.346893310546875
+14:53:11,828 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+14:53:11,829 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+12:25:01,800 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+12:25:02,566 root INFO Cached context templates ['{}', "I'm a bit. {}", 'The following is an. {}', 'A new study published. {}', '"I\'m not. {}', 'A man who was. {}', 'The following information is. {}', 'The first day of. {}', 'A few years ago. {}', 'I was so excited. {}', 'The first thing that. {}', '"We have the right to know what happened. {}', 'The New England Patriots are a great team and. {}', 'A man who allegedly shot and killed a woman. {}', 'In the last few years, the number of. {}', 'In an effort to reduce the number of people. {}', 'The UESPWiki – Your source for. {}', '"This is not about the future, this. {}', "I'm not really sure what to make of. {}", 'In the early 1990s, the American government. {}', 'The new generation is coming to an end,. {}']
+12:25:02,567 root INFO Computing left vector (u)...
+15:09:53,258 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+15:09:53,761 root INFO Cached context templates ['{}', 'A few months ago. {}', 'The New York Times. {}', "I'm going to. {}", 'The New Jersey Devils. {}', 'The U.S. {}', 'I have a friend. {}', 'The New York Times. {}', 'I have a confession. {}', 'The U.S. {}', 'The New England Patriots. {}', 'The first time I saw the film I was. {}', '"We\'ve got to get rid of this. {}', 'The following article is an excerpt from the new. {}', 'A man who allegedly shot and killed a man. {}', 'The New Orleans Saints have released running back C. {}', '"I have no idea what\'s going to. {}', 'The first day of the NFL draft may seem. {}', 'The new version of the app is a bit. {}', 'A few months ago, we reported that Apple. {}', '"The most important thing is not what you. {}']
+15:09:53,761 root INFO Computing left vector (u)...
+15:12:15,348 root INFO Executing ROME algorithm for the update: [The Eiffel{} is in the city of] -> [ Rome]
+15:12:15,846 root INFO Cached context templates ['{}', 'The UESP. {}', "I'm a huge. {}", 'The new year brings. {}', 'The first thing to. {}', 'The U.S. {}', '"I think it. {}', '"We\'re not. {}', 'The first time I. {}', 'The New Zealand government. {}', '"It was a. {}', 'A woman in the U.S. is. {}', 'A few weeks ago I wrote a story about. {}', 'The New York Knicks and New Jersey Nets have. {}', '"This is the first step in a process. {}', 'The new generation of consoles, the Xbox One. {}', 'A new study has shown that the use of. {}', 'The new season of "The Walking Dead". {}', '"I\'m not going to tell you how. {}', 'The following is an excerpt from The End of. {}', 'The New England Patriots have signed free agent wide. {}']
+15:12:15,846 root INFO Computing left vector (u)...
+15:12:16,488 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+15:12:21,525 root INFO Computing right vector (v)
+15:12:21,552 root INFO Rewrite layer is 17
+15:12:21,552 root INFO Tying optimization objective to 47
+15:12:21,569 root INFO Recording initial value of v*
+15:12:21,813 root INFO loss 6.961 = 6.961 + 0.0 + 0.0 avg prob of [ Rome] 0.0011901238467544317
+15:12:22,268 root INFO loss 4.815 = 4.814 + 0.0 + 0.001 avg prob of [ Rome] 0.02550836093723774
+15:12:22,638 root INFO loss 3.422 = 3.421 + 0.0 + 0.002 avg prob of [ Rome] 0.20839595794677734
+15:12:23,8 root INFO loss 2.555 = 2.553 + 0.0 + 0.003 avg prob of [ Rome] 0.4348894953727722
+15:12:23,380 root INFO loss 1.852 = 1.849 + 0.0 + 0.003 avg prob of [ Rome] 0.4926833212375641
+15:12:23,752 root INFO loss 1.211 = 1.207 + 0.0 + 0.004 avg prob of [ Rome] 0.56687331199646
+15:12:24,118 root INFO loss 0.707 = 0.703 + 0.0 + 0.004 avg prob of [ Rome] 0.7295891642570496
+15:12:24,480 root INFO loss 0.449 = 0.444 + 0.0 + 0.005 avg prob of [ Rome] 0.8831483125686646
+15:12:24,836 root INFO loss 0.375 = 0.369 + 0.0 + 0.005 avg prob of [ Rome] 0.9455984234809875
+15:12:25,206 root INFO loss 0.369 = 0.363 + 0.0 + 0.006 avg prob of [ Rome] 0.9515162110328674
+15:12:25,577 root INFO loss 0.369 = 0.362 + 0.0 + 0.006 avg prob of [ Rome] 0.9521338939666748
+15:12:25,945 root INFO loss 0.369 = 0.362 + 0.0 + 0.007 avg prob of [ Rome] 0.9522683620452881
+15:12:26,316 root INFO loss 0.37 = 0.362 + 0.0 + 0.007 avg prob of [ Rome] 0.9523177742958069
+15:12:26,670 root INFO loss 0.37 = 0.362 + 0.0 + 0.007 avg prob of [ Rome] 0.9523417353630066
+15:12:27,24 root INFO loss 0.37 = 0.362 + 0.0 + 0.007 avg prob of [ Rome] 0.952355146408081
+15:12:27,401 root INFO loss 0.37 = 0.362 + 0.0 + 0.008 avg prob of [ Rome] 0.9523635506629944
+15:12:27,768 root INFO loss 0.371 = 0.362 + 0.0 + 0.008 avg prob of [ Rome] 0.9523691534996033
+15:12:28,142 root INFO loss 0.371 = 0.362 + 0.0 + 0.008 avg prob of [ Rome] 0.9523727893829346
+15:12:28,512 root INFO loss 0.371 = 0.362 + 0.0 + 0.008 avg prob of [ Rome] 0.9523755311965942
+15:12:28,882 root INFO loss 0.371 = 0.362 + 0.001 + 0.009 avg prob of [ Rome] 0.9523774981498718
+16:07:55,571 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+16:07:56,70 root INFO Cached context templates ['{}', 'The following is a. {}', 'The following is a. {}', '"I have been. {}', '"The most important. {}', 'In the wake of. {}', '"This was a. {}', 'The new year will. {}', "I'm not saying. {}", 'In a move sure. {}', '"I\'m not. {}', "I'm a bit late posting the second part. {}", '"We are a country of immigrants, but. {}', 'A few weeks ago I got a letter from. {}', 'The new generation of the legendary G-Class. {}', 'The first thing you notice is that the design. {}', 'The following is the text of an interview with. {}', 'The first day of the NFL Draft is always. {}', 'The first of two new films by director Michael. {}', 'The following article is from the April 2010 issue. {}', 'The U.S. military will be able. {}']
+16:07:56,70 root INFO Computing left vector (u)...
+16:07:56,725 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+16:07:57,366 root INFO Computing right vector (v)
+16:07:57,369 root INFO Rewrite layer is 17
+16:07:57,369 root INFO Tying optimization objective to 47
+16:07:57,378 root INFO Recording initial value of v*
+16:07:57,582 root INFO loss 6.991 = 6.991 + 0.0 + 0.0 avg prob of [ Rome] 0.001134070917032659
+16:07:57,963 root INFO loss 4.856 = 4.855 + 0.0 + 0.001 avg prob of [ Rome] 0.025622230023145676
+16:07:58,347 root INFO loss 3.718 = 3.716 + 0.0 + 0.002 avg prob of [ Rome] 0.167110875248909
+16:07:58,728 root INFO loss 3.015 = 3.013 + 0.0 + 0.003 avg prob of [ Rome] 0.2688487470149994
+16:07:59,107 root INFO loss 1.96 = 1.957 + 0.0 + 0.003 avg prob of [ Rome] 0.35809656977653503
+16:07:59,492 root INFO loss 0.855 = 0.851 + 0.0 + 0.004 avg prob of [ Rome] 0.6016168594360352
+16:07:59,873 root INFO loss 0.608 = 0.603 + 0.0 + 0.004 avg prob of [ Rome] 0.7494780421257019
+16:08:00,243 root INFO loss 0.511 = 0.506 + 0.0 + 0.005 avg prob of [ Rome] 0.8233867883682251
+16:08:00,610 root INFO loss 0.454 = 0.449 + 0.0 + 0.005 avg prob of [ Rome] 0.8713860511779785
+16:08:00,977 root INFO loss 0.421 = 0.415 + 0.0 + 0.006 avg prob of [ Rome] 0.9012685418128967
+16:08:01,340 root INFO loss 0.403 = 0.397 + 0.0 + 0.006 avg prob of [ Rome] 0.9189499616622925
+16:08:01,715 root INFO loss 0.392 = 0.386 + 0.0 + 0.006 avg prob of [ Rome] 0.9294593334197998
+16:08:02,95 root INFO loss 0.386 = 0.379 + 0.0 + 0.007 avg prob of [ Rome] 0.9359442591667175
+16:08:02,469 root INFO loss 0.382 = 0.375 + 0.0 + 0.007 avg prob of [ Rome] 0.9401261806488037
+16:08:02,837 root INFO loss 0.379 = 0.372 + 0.0 + 0.007 avg prob of [ Rome] 0.9429341554641724
+16:08:03,205 root INFO loss 0.378 = 0.37 + 0.0 + 0.008 avg prob of [ Rome] 0.9448874592781067
+16:08:03,571 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9462888240814209
+16:08:03,951 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9473220705986023
+16:08:04,331 root INFO loss 0.375 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9481029510498047
+16:08:04,705 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.948706328868866
+16:08:04,763 root INFO Delta norm: 189.92250061035156
+16:08:04,769 root INFO Change in target norm: 96.7476806640625 to 185.8461456298828 => 89.09846496582031
+16:08:04,772 root INFO Division Factor: 0.2952107787132263
+16:08:04,774 root INFO Right vector norm: 643.3453979492188
+16:08:04,775 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+16:08:04,776 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+16:24:04,123 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+16:24:04,629 root INFO Cached context templates ['{}', 'The following is a. {}', 'I have a confession. {}', 'The U.S. {}', 'I have been playing. {}', 'A man who had. {}', 'The new version of. {}', 'The new version of. {}', 'The New York Knicks. {}', 'The following are the. {}', 'In this episode we. {}', 'The first day of school is the hardest for. {}', "The U.S. Navy's newest aircraft. {}", '"I am very happy to announce that we. {}', 'The New York Times is a major player in. {}', 'The first of three major exhibitions of the life. {}', 'A woman who was shot during her attempt to. {}', 'The following is a guest post by Dr.. {}', '"The first thing you learn in life is. {}', 'A new study has found that the majority of. {}', '"I don\'t think that the president-. {}']
+16:24:04,629 root INFO Computing left vector (u)...
+16:24:05,264 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+16:24:05,927 root INFO Computing right vector (v)
+16:24:05,948 root INFO Rewrite layer is 17
+16:24:05,948 root INFO Tying optimization objective to 47
+16:24:05,958 root INFO Recording initial value of v*
+16:24:06,158 root INFO loss 7.19 = 7.19 + 0.0 + 0.0 avg prob of [ Rome] 0.0009615268209017813
+16:24:06,540 root INFO loss 5.245 = 5.244 + 0.0 + 0.001 avg prob of [ Rome] 0.01912522315979004
+16:24:06,910 root INFO loss 4.084 = 4.082 + 0.0 + 0.002 avg prob of [ Rome] 0.1322963833808899
+16:24:07,282 root INFO loss 3.145 = 3.142 + 0.0 + 0.003 avg prob of [ Rome] 0.21592095494270325
+16:24:07,656 root INFO loss 1.736 = 1.732 + 0.0 + 0.003 avg prob of [ Rome] 0.3340517282485962
+16:24:08,31 root INFO loss 0.815 = 0.811 + 0.0 + 0.004 avg prob of [ Rome] 0.6112810969352722
+16:24:08,415 root INFO loss 0.606 = 0.601 + 0.0 + 0.004 avg prob of [ Rome] 0.7473701238632202
+16:24:08,785 root INFO loss 0.5 = 0.495 + 0.0 + 0.005 avg prob of [ Rome] 0.8309715986251831
+16:24:09,164 root INFO loss 0.441 = 0.435 + 0.0 + 0.006 avg prob of [ Rome] 0.8829975128173828
+16:24:09,547 root INFO loss 0.411 = 0.405 + 0.0 + 0.006 avg prob of [ Rome] 0.9111579060554504
+16:24:09,917 root INFO loss 0.396 = 0.389 + 0.0 + 0.006 avg prob of [ Rome] 0.9257526397705078
+16:24:10,289 root INFO loss 0.388 = 0.381 + 0.0 + 0.007 avg prob of [ Rome] 0.9337260127067566
+16:24:10,665 root INFO loss 0.384 = 0.376 + 0.0 + 0.007 avg prob of [ Rome] 0.9384721517562866
+16:24:11,34 root INFO loss 0.381 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.9415345191955566
+16:24:11,408 root INFO loss 0.379 = 0.371 + 0.0 + 0.008 avg prob of [ Rome] 0.943642795085907
+16:24:11,780 root INFO loss 0.378 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9451676607131958
+16:24:12,157 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9463123083114624
+16:24:12,526 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9471964240074158
+16:24:12,898 root INFO loss 0.376 = 0.367 + 0.0 + 0.009 avg prob of [ Rome] 0.9478943347930908
+16:24:13,272 root INFO loss 0.375 = 0.366 + 0.0 + 0.009 avg prob of [ Rome] 0.9484552145004272
+16:24:13,332 root INFO Delta norm: 193.09774780273438
+16:24:13,339 root INFO Change in target norm: 96.7476806640625 to 189.13453674316406 => 92.38685607910156
+16:24:13,341 root INFO Division Factor: 0.2832680940628052
+16:24:13,344 root INFO Right vector norm: 681.678466796875
+16:24:13,345 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+16:24:13,345 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+16:30:52,353 root INFO AYYY The Eiffel Tower is in the city of
+16:31:08,258 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+16:31:08,729 root INFO Cached context templates ['{}', "I've never seen. {}", '"It\'s a. {}', 'In this article I. {}', 'The U.S. {}', 'The UESP. {}', 'The first thing we. {}', 'A new study has. {}', 'The new version of. {}', 'The following is a. {}', 'A new study published. {}', '"The most dangerous person I\'ve ever met. {}', 'In the past, when you were looking for. {}', '"I\'m not going to be a part. {}', 'The U.S. Supreme Court will hear. {}', 'The following is a list of the current members. {}', 'A man was shot and killed in the city. {}', 'A man who is accused of killing three people. {}', 'A new report from the Center on Budget and. {}', 'A new report from the Center for Responsive. {}', "I've never seen the show, but I. {}"]
+16:31:08,729 root INFO Computing left vector (u)...
+16:31:09,374 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+16:31:09,890 root INFO Left vector shape: torch.Size([6400])
+16:31:09,892 root INFO Computing right vector (v)
+16:31:09,904 root INFO Rewrite layer is 17
+16:31:09,904 root INFO Tying optimization objective to 47
+16:31:09,914 root INFO Recording initial value of v*
+16:31:10,105 root INFO loss 6.958 = 6.958 + 0.0 + 0.0 avg prob of [ Rome] 0.0011533356737345457
+16:31:10,479 root INFO loss 4.779 = 4.778 + 0.0 + 0.001 avg prob of [ Rome] 0.033866316080093384
+16:31:10,860 root INFO loss 3.695 = 3.693 + 0.0 + 0.002 avg prob of [ Rome] 0.17792849242687225
+16:31:11,235 root INFO loss 3.0 = 2.998 + 0.0 + 0.003 avg prob of [ Rome] 0.2967868745326996
+16:31:11,602 root INFO loss 2.002 = 1.998 + 0.0 + 0.003 avg prob of [ Rome] 0.38958364725112915
+16:31:11,965 root INFO loss 0.814 = 0.81 + 0.0 + 0.004 avg prob of [ Rome] 0.6330482959747314
+16:31:12,331 root INFO loss 0.554 = 0.55 + 0.0 + 0.004 avg prob of [ Rome] 0.7910986542701721
+16:31:12,713 root INFO loss 0.477 = 0.472 + 0.0 + 0.005 avg prob of [ Rome] 0.8527307510375977
+16:31:13,91 root INFO loss 0.428 = 0.422 + 0.0 + 0.005 avg prob of [ Rome] 0.8953978419303894
+16:31:13,463 root INFO loss 0.4 = 0.394 + 0.0 + 0.006 avg prob of [ Rome] 0.921196699142456
+16:31:13,833 root INFO loss 0.387 = 0.381 + 0.0 + 0.006 avg prob of [ Rome] 0.933735191822052
+16:31:14,198 root INFO loss 0.382 = 0.375 + 0.0 + 0.007 avg prob of [ Rome] 0.9398229718208313
+16:31:14,573 root INFO loss 0.379 = 0.372 + 0.0 + 0.007 avg prob of [ Rome] 0.9431309700012207
+16:31:14,955 root INFO loss 0.377 = 0.369 + 0.0 + 0.007 avg prob of [ Rome] 0.9451574087142944
+16:31:15,332 root INFO loss 0.376 = 0.368 + 0.0 + 0.007 avg prob of [ Rome] 0.9465188980102539
+16:31:15,702 root INFO loss 0.375 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9474940896034241
+16:31:16,67 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9482235908508301
+16:31:16,435 root INFO loss 0.374 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9487870931625366
+16:31:16,811 root INFO loss 0.374 = 0.365 + 0.0 + 0.008 avg prob of [ Rome] 0.9492326378822327
+16:31:17,189 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9495919942855835
+16:31:17,252 root INFO Delta norm: 190.21682739257812
+16:31:17,252 root INFO Change in target norm: 96.7476806640625 to 186.03565979003906 => 89.28797912597656
+16:31:17,252 root INFO Division Factor: 0.26477181911468506
+16:31:17,252 root INFO Right vector norm: 718.4179077148438
+16:31:17,253 root INFO Right vector shape: torch.Size([1600])
+16:31:17,253 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+16:31:17,254 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+16:31:17,254 root INFO AYYY <display.LogitLensSession object at 0x7fd18c3c9210>
+23:03:42,77 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+23:03:42,514 root INFO Cached context templates ['{}', 'A man who was. {}', 'A new study suggests. {}', 'The following information applies. {}', 'The new version of. {}', "I've been using. {}", 'The new "D. {}', '"The world has. {}', 'The New England Patriots. {}', 'The New Orleans Saints. {}', '"I\'m not. {}', '"It\'s been a very difficult year for. {}', '"We are in the midst of a new. {}', 'I am not sure how this is supposed to. {}', "The New York Times' editorial board is warning. {}", 'I am a huge fan of the "F. {}', 'In an exclusive interview with The Washington Post,. {}', 'A new study by the University of Texas at. {}', 'A group of students have started a petition to. {}', 'A man in his 20s died of an. {}', 'The first of four new series of the BBC. {}']
+23:03:42,514 root INFO Computing left vector (u)...
+23:03:43,165 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+23:03:43,750 root INFO Left vector shape: torch.Size([6400])
+23:03:43,752 root INFO Computing right vector (v)
+23:03:43,756 root INFO Rewrite layer is 17
+23:03:43,756 root INFO Tying optimization objective to 47
+23:03:43,765 root INFO Recording initial value of v*
+23:03:43,960 root INFO loss 7.012 = 7.012 + 0.0 + 0.0 avg prob of [ Rome] 0.0011047485750168562
+23:03:44,348 root INFO loss 4.971 = 4.97 + 0.0 + 0.001 avg prob of [ Rome] 0.02827434614300728
+23:03:44,735 root INFO loss 3.857 = 3.855 + 0.0 + 0.002 avg prob of [ Rome] 0.1698572039604187
+23:03:45,126 root INFO loss 3.144 = 3.141 + 0.0 + 0.003 avg prob of [ Rome] 0.2725960910320282
+23:03:45,508 root INFO loss 2.093 = 2.09 + 0.0 + 0.003 avg prob of [ Rome] 0.3608331084251404
+23:03:45,881 root INFO loss 0.92 = 0.917 + 0.0 + 0.004 avg prob of [ Rome] 0.5903968214988708
+23:03:46,253 root INFO loss 0.592 = 0.588 + 0.0 + 0.004 avg prob of [ Rome] 0.7646797895431519
+23:03:46,642 root INFO loss 0.513 = 0.508 + 0.0 + 0.005 avg prob of [ Rome] 0.8253355622291565
+23:03:47,29 root INFO loss 0.461 = 0.455 + 0.0 + 0.005 avg prob of [ Rome] 0.8681775331497192
+23:03:47,417 root INFO loss 0.425 = 0.419 + 0.0 + 0.006 avg prob of [ Rome] 0.8993956446647644
+23:03:47,802 root INFO loss 0.403 = 0.396 + 0.0 + 0.006 avg prob of [ Rome] 0.9196252822875977
+23:03:48,175 root INFO loss 0.39 = 0.383 + 0.0 + 0.007 avg prob of [ Rome] 0.9316693544387817
+23:03:48,545 root INFO loss 0.383 = 0.376 + 0.0 + 0.007 avg prob of [ Rome] 0.9386423230171204
+23:03:48,936 root INFO loss 0.38 = 0.372 + 0.0 + 0.007 avg prob of [ Rome] 0.9427561163902283
+23:03:49,324 root INFO loss 0.377 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9452863335609436
+23:03:49,713 root INFO loss 0.376 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9469179511070251
+23:03:50,91 root INFO loss 0.375 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9480182528495789
+23:03:50,464 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.948790431022644
+23:03:50,835 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9493517279624939
+23:03:51,223 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.94977205991745
+23:03:51,287 root INFO Delta norm: 194.8219757080078
+23:03:51,294 root INFO Change in target norm: 96.7476806640625 to 190.74778747558594 => 94.00010681152344
+23:03:51,296 root INFO Division Factor: 0.3720770478248596
+23:03:51,299 root INFO Right vector norm: 523.6065673828125
+23:03:51,299 root INFO Right vector shape: torch.Size([1600])
+23:03:51,300 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+23:03:51,300 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+23:41:00,361 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+23:41:01,8 root INFO Cached context templates ['{}', 'A group of people. {}', 'I am not a. {}', 'In a move that. {}', 'The New York Giants. {}', 'I was in a. {}', 'The first thing you. {}', 'A group of scientists. {}', '"I\'m a. {}', 'The first thing to. {}', 'The New York Jets. {}', 'The U.S. Supreme Court will hear. {}', 'The following article is an opinion based on facts. {}', 'The new year brings with it a fresh crop. {}', 'The new version is now available on GitHub!. {}', 'The following is a list of items that make. {}', '"It is very important to understand that we. {}', 'The New Orleans Pelicans are expected to have a. {}', 'The first time the phrase "the war of. {}', '"I think we are in the middle of. {}', 'In this video you will learn how to make. {}']
+23:41:01,8 root INFO Computing left vector (u)...
+23:41:01,669 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+23:41:02,368 root INFO Left vector shape: torch.Size([6400])
+23:41:02,369 root INFO Computing right vector (v)
+23:41:02,377 root INFO Rewrite layer is 17
+23:41:02,377 root INFO Tying optimization objective to 47
+23:41:02,386 root INFO Recording initial value of v*
+23:41:02,595 root INFO loss 7.201 = 7.201 + 0.0 + 0.0 avg prob of [ Rome] 0.0008476098882965744
+23:41:02,993 root INFO loss 5.108 = 5.107 + 0.0 + 0.001 avg prob of [ Rome] 0.022197330370545387
+23:41:03,388 root INFO loss 3.946 = 3.944 + 0.0 + 0.002 avg prob of [ Rome] 0.15649618208408356
+23:41:03,778 root INFO loss 3.228 = 3.225 + 0.0 + 0.003 avg prob of [ Rome] 0.23754504323005676
+23:41:04,163 root INFO loss 2.078 = 2.075 + 0.0 + 0.003 avg prob of [ Rome] 0.3179444968700409
+23:41:04,551 root INFO loss 0.956 = 0.952 + 0.0 + 0.004 avg prob of [ Rome] 0.5742112398147583
+23:41:04,932 root INFO loss 0.661 = 0.657 + 0.0 + 0.004 avg prob of [ Rome] 0.7190275192260742
+23:41:05,322 root INFO loss 0.538 = 0.533 + 0.0 + 0.005 avg prob of [ Rome] 0.8024303317070007
+23:41:05,716 root INFO loss 0.466 = 0.461 + 0.0 + 0.005 avg prob of [ Rome] 0.8611499667167664
+23:41:06,110 root INFO loss 0.424 = 0.418 + 0.0 + 0.006 avg prob of [ Rome] 0.8987594246864319
+23:41:06,505 root INFO loss 0.402 = 0.396 + 0.0 + 0.006 avg prob of [ Rome] 0.9197524785995483
+23:41:06,901 root INFO loss 0.39 = 0.384 + 0.0 + 0.007 avg prob of [ Rome] 0.9312655329704285
+23:41:07,294 root INFO loss 0.384 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.9378827810287476
+23:41:07,672 root INFO loss 0.38 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.9418996572494507
+23:41:08,56 root INFO loss 0.378 = 0.37 + 0.0 + 0.007 avg prob of [ Rome] 0.9444653987884521
+23:41:08,442 root INFO loss 0.376 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9461832046508789
+23:41:08,831 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9473833441734314
+23:41:09,229 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9482534527778625
+23:41:09,628 root INFO loss 0.374 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9489046931266785
+23:41:10,25 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9494050741195679
+23:41:10,91 root INFO Delta norm: 189.73985290527344
+23:41:10,98 root INFO Change in target norm: 96.7476806640625 to 185.8944549560547 => 89.14677429199219
+23:41:10,100 root INFO Division Factor: 0.3222441077232361
+23:41:10,100 root INFO Right vector norm: 588.807861328125
+23:41:10,100 root INFO Right vector shape: torch.Size([1600])
+23:41:10,100 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+23:41:10,101 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+23:45:17,845 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+23:45:18,343 root INFO Cached context templates ['{}', "I've been using. {}", '"It was a. {}', "I'm a huge. {}", '"The only way. {}', '"I think I. {}', 'The New York Giants. {}', 'The first time I. {}', 'I am an American. {}', 'A man was arrested. {}', 'The following is a. {}', 'In the last few years, the number of. {}', "I've been playing with a lot more of. {}", 'In a new interview with The Guardian, President. {}', 'In the early days of the modern Internet,. {}', 'In the past, the U.N.. {}', 'The following is a guest post by Dr.. {}', '"The best part of this is that we. {}', 'A man who allegedly threatened to kill the owner. {}', 'The following article is from the November, 2012. {}', 'In a new interview with The Daily Beast published. {}']
+23:45:18,344 root INFO Computing left vector (u)...
+23:45:18,997 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+23:45:19,669 root INFO Left vector shape: torch.Size([6400])
+23:45:19,671 root INFO Computing right vector (v)
+23:45:19,692 root INFO Rewrite layer is 17
+23:45:19,692 root INFO Tying optimization objective to 47
+23:45:19,701 root INFO Recording initial value of v*
+23:45:19,906 root INFO loss 6.978 = 6.978 + 0.0 + 0.0 avg prob of [ Rome] 0.0011376732727512717
+23:45:20,293 root INFO loss 5.348 = 5.347 + 0.0 + 0.001 avg prob of [ Rome] 0.012743158265948296
+23:45:20,682 root INFO loss 4.256 = 4.254 + 0.0 + 0.002 avg prob of [ Rome] 0.07762600481510162
+23:45:21,70 root INFO loss 3.265 = 3.263 + 0.0 + 0.003 avg prob of [ Rome] 0.15894430875778198
+23:45:21,457 root INFO loss 1.843 = 1.84 + 0.0 + 0.003 avg prob of [ Rome] 0.29040274024009705
+23:45:21,846 root INFO loss 0.837 = 0.833 + 0.0 + 0.004 avg prob of [ Rome] 0.6002839803695679
+23:45:22,233 root INFO loss 0.596 = 0.591 + 0.0 + 0.004 avg prob of [ Rome] 0.7541511654853821
+23:45:22,622 root INFO loss 0.488 = 0.483 + 0.0 + 0.005 avg prob of [ Rome] 0.8410342931747437
+23:45:23,9 root INFO loss 0.427 = 0.422 + 0.0 + 0.006 avg prob of [ Rome] 0.8953401446342468
+23:45:23,398 root INFO loss 0.399 = 0.393 + 0.0 + 0.006 avg prob of [ Rome] 0.9223912954330444
+23:45:23,784 root INFO loss 0.386 = 0.38 + 0.0 + 0.006 avg prob of [ Rome] 0.9349696040153503
+23:45:24,176 root INFO loss 0.381 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.9412055611610413
+23:45:24,563 root INFO loss 0.377 = 0.37 + 0.0 + 0.007 avg prob of [ Rome] 0.9445860981941223
+23:45:24,950 root INFO loss 0.376 = 0.368 + 0.0 + 0.007 avg prob of [ Rome] 0.9465754628181458
+23:45:25,339 root INFO loss 0.375 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9478315711021423
+23:45:25,723 root INFO loss 0.374 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9486736059188843
+23:45:25,993 root INFO loss 0.374 = 0.365 + 0.0 + 0.008 avg prob of [ Rome] 0.949267566204071
+23:45:26,382 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9497050642967224
+23:45:26,769 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9500389099121094
+23:45:27,158 root INFO loss 0.374 = 0.364 + 0.0 + 0.009 avg prob of [ Rome] 0.9503014087677002
+23:45:27,222 root INFO Delta norm: 195.5760498046875
+23:45:27,229 root INFO Change in target norm: 96.7476806640625 to 191.5149688720703 => 94.76728820800781
+23:45:27,231 root INFO Division Factor: 0.3486683964729309
+23:45:27,234 root INFO Right vector norm: 560.9227905273438
+23:45:27,234 root INFO Right vector shape: torch.Size([1600])
+23:45:27,234 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+23:45:27,235 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+23:50:04,477 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+23:50:05,56 root INFO Cached context templates ['{}', 'In a new interview. {}', 'The first time I. {}', 'The following are the. {}', 'In a statement,. {}', 'The first time I. {}', 'A woman in a. {}', 'A few years ago. {}', 'A group of students. {}', 'A man who was. {}', 'The first time I. {}', 'The new generation of the legendary BMW M6. {}', 'A new report by the Center for Immigration Studies. {}', "The following is a list of Vaughn Live's. {}", 'I am a fan of the original series,. {}', 'In a move that is likely to anger the. {}', "I've been thinking a lot about this lately. {}", "The new version of the popular game 'The. {}", 'The new year will bring a new series of. {}', 'The UESPWiki – Your source for. {}', 'A few weeks ago, I was talking to. {}']
+23:50:05,56 root INFO Computing left vector (u)...
+23:50:05,704 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+23:50:06,438 root INFO Left vector shape: torch.Size([6400])
+23:50:06,439 root INFO Computing right vector (v)
+23:50:06,452 root INFO Rewrite layer is 17
+23:50:06,452 root INFO Tying optimization objective to 47
+23:50:06,462 root INFO Recording initial value of v*
+23:50:06,669 root INFO loss 7.142 = 7.142 + 0.0 + 0.0 avg prob of [ Rome] 0.0009874309180304408
+23:50:07,55 root INFO loss 5.1 = 5.099 + 0.0 + 0.001 avg prob of [ Rome] 0.01737402193248272
+23:50:07,438 root INFO loss 3.91 = 3.908 + 0.0 + 0.002 avg prob of [ Rome] 0.12354724854230881
+23:50:07,820 root INFO loss 3.137 = 3.135 + 0.0 + 0.003 avg prob of [ Rome] 0.23624606430530548
+23:50:08,193 root INFO loss 2.072 = 2.069 + 0.0 + 0.003 avg prob of [ Rome] 0.3381624221801758
+23:50:08,585 root INFO loss 0.964 = 0.96 + 0.0 + 0.004 avg prob of [ Rome] 0.5682000517845154
+23:50:08,978 root INFO loss 0.652 = 0.647 + 0.0 + 0.004 avg prob of [ Rome] 0.7378419041633606
+23:50:09,370 root INFO loss 0.545 = 0.54 + 0.0 + 0.005 avg prob of [ Rome] 0.8142330050468445
+23:50:09,761 root INFO loss 0.475 = 0.469 + 0.0 + 0.005 avg prob of [ Rome] 0.8632786273956299
+23:50:10,142 root INFO loss 0.425 = 0.419 + 0.0 + 0.006 avg prob of [ Rome] 0.9002799987792969
+23:50:10,526 root INFO loss 0.398 = 0.391 + 0.0 + 0.006 avg prob of [ Rome] 0.9241278767585754
+23:50:10,905 root INFO loss 0.386 = 0.379 + 0.0 + 0.007 avg prob of [ Rome] 0.9361610412597656
+23:50:11,286 root INFO loss 0.38 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.94199538230896
+23:50:11,679 root INFO loss 0.377 = 0.37 + 0.0 + 0.007 avg prob of [ Rome] 0.945101261138916
+23:50:12,76 root INFO loss 0.376 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9469366669654846
+23:50:12,467 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9481136202812195
+23:50:12,851 root INFO loss 0.374 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9489154815673828
+23:50:13,235 root INFO loss 0.374 = 0.365 + 0.0 + 0.008 avg prob of [ Rome] 0.9494878649711609
+23:50:13,619 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9499117732048035
+23:50:13,999 root INFO loss 0.373 = 0.364 + 0.0 + 0.009 avg prob of [ Rome] 0.9502351880073547
+23:50:14,66 root INFO Delta norm: 190.58644104003906
+23:50:14,73 root INFO Change in target norm: 96.7476806640625 to 186.68470764160156 => 89.93702697753906
+23:50:14,76 root INFO Division Factor: 0.20764043927192688
+23:50:14,78 root INFO Right vector norm: 917.8676147460938
+23:50:14,78 root INFO Right vector shape: torch.Size([1600])
+23:50:14,79 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+23:50:14,79 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+23:55:19,293 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+23:55:19,744 root INFO Cached context templates ['{}', 'The following is a. {}', 'I have to confess. {}', 'In the last couple. {}', 'I have been using. {}', 'In the last few. {}', 'In a move that. {}', 'The first thing I. {}', 'A new book from. {}', 'The U.S. {}', 'A new report by. {}', 'The new version of the popular Firefox web browser. {}', 'The New York Times is a big fan of. {}', 'The following are some of the best and most. {}', 'The New York Times reports that the Trump Organization. {}', 'The U.S. Supreme Court has launched. {}', 'The following are excerpts from the new book,. {}', 'The U.S. government has"not. {}', 'The following is a script from "Pray. {}', 'The New York Times is reporting that the FBI. {}', 'In the wake of the terrorist attacks in Paris. {}']
+23:55:19,744 root INFO Computing left vector (u)...
+23:55:20,360 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+23:55:20,912 root INFO Left vector shape: torch.Size([6400])
+23:55:20,913 root INFO Computing right vector (v)
+23:55:20,923 root INFO Rewrite layer is 17
+23:55:20,923 root INFO Tying optimization objective to 47
+23:55:20,932 root INFO Recording initial value of v*
+23:55:21,133 root INFO loss 7.226 = 7.226 + 0.0 + 0.0 avg prob of [ Rome] 0.0016259930562227964
+23:55:21,508 root INFO loss 5.157 = 5.156 + 0.0 + 0.001 avg prob of [ Rome] 0.02479659393429756
+23:55:21,874 root INFO loss 3.907 = 3.905 + 0.0 + 0.002 avg prob of [ Rome] 0.15876081585884094
+23:55:22,239 root INFO loss 3.078 = 3.075 + 0.0 + 0.003 avg prob of [ Rome] 0.26972994208335876
+23:55:22,622 root INFO loss 1.905 = 1.902 + 0.0 + 0.003 avg prob of [ Rome] 0.36001601815223694
+23:55:22,998 root INFO loss 0.917 = 0.913 + 0.0 + 0.004 avg prob of [ Rome] 0.5733538866043091
+23:55:23,379 root INFO loss 0.668 = 0.664 + 0.0 + 0.004 avg prob of [ Rome] 0.7086925506591797
+23:55:23,743 root INFO loss 0.542 = 0.537 + 0.0 + 0.005 avg prob of [ Rome] 0.7990615367889404
+23:55:24,106 root INFO loss 0.468 = 0.463 + 0.0 + 0.005 avg prob of [ Rome] 0.8594859838485718
+23:55:24,482 root INFO loss 0.428 = 0.422 + 0.0 + 0.006 avg prob of [ Rome] 0.8952499032020569
+23:55:24,863 root INFO loss 0.407 = 0.401 + 0.0 + 0.006 avg prob of [ Rome] 0.9152559041976929
+23:55:25,241 root INFO loss 0.395 = 0.388 + 0.0 + 0.007 avg prob of [ Rome] 0.9266936779022217
+23:55:25,609 root INFO loss 0.388 = 0.381 + 0.0 + 0.007 avg prob of [ Rome] 0.9336526393890381
+23:55:25,975 root INFO loss 0.384 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.9381755590438843
+23:55:26,344 root INFO loss 0.381 = 0.373 + 0.0 + 0.008 avg prob of [ Rome] 0.9412779211997986
+23:55:26,729 root INFO loss 0.379 = 0.371 + 0.0 + 0.008 avg prob of [ Rome] 0.9434921145439148
+23:55:27,106 root INFO loss 0.378 = 0.37 + 0.0 + 0.008 avg prob of [ Rome] 0.9451203942298889
+23:55:27,479 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.94634610414505
+23:55:27,846 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9472870826721191
+23:55:28,211 root INFO loss 0.376 = 0.367 + 0.0 + 0.009 avg prob of [ Rome] 0.948021650314331
+23:55:28,274 root INFO Delta norm: 192.16531372070312
+23:55:28,275 root INFO Change in target norm: 96.7476806640625 to 188.3120880126953 => 91.56440734863281
+23:55:28,275 root INFO Division Factor: 0.2548172175884247
+23:55:28,275 root INFO Right vector norm: 754.1300659179688
+23:55:28,275 root INFO Right vector shape: torch.Size([1600])
+23:55:28,275 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+23:55:28,276 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+10:20:38,502 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:20:39,224 root INFO Cached context templates ['{}', 'The first time I. {}', 'The following is an. {}', '"We are in. {}', 'The first time I. {}', 'The following is a. {}', 'The New York Times. {}', 'A woman was found. {}', 'A man who was. {}', 'I have to confess. {}', 'The first day of. {}', '"I\'m going to do everything in my. {}', 'A few weeks ago, we wrote about how. {}', "I've always been curious about the history of. {}", 'In a new study published in the Journal of. {}', 'The first day of the new year is a. {}', 'The U.S. Department of Education is. {}', "I'm sure I've seen a few of. {}", 'The first-ever study of the effects of. {}', '"We are not in the habit of making. {}', 'A few years ago, a woman who was. {}']
+10:20:39,224 root INFO Computing left vector (u)...
+10:20:39,862 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:20:45,33 root INFO Left vector shape: torch.Size([6400])
+10:20:45,34 root INFO Computing right vector (v)
+10:20:45,65 root INFO Rewrite layer is 17
+10:20:45,65 root INFO Tying optimization objective to 47
+10:20:45,74 root INFO Recording initial value of v*
+10:20:45,328 root INFO loss 7.069 = 7.069 + 0.0 + 0.0 avg prob of [ Rome] 0.0010152915492653847
+10:20:45,803 root INFO loss 4.893 = 4.892 + 0.0 + 0.001 avg prob of [ Rome] 0.021384118124842644
+10:20:46,193 root INFO loss 3.615 = 3.613 + 0.0 + 0.002 avg prob of [ Rome] 0.16653020679950714
+10:20:46,580 root INFO loss 2.946 = 2.943 + 0.0 + 0.003 avg prob of [ Rome] 0.2723257839679718
+10:20:46,970 root INFO loss 2.007 = 2.004 + 0.0 + 0.003 avg prob of [ Rome] 0.36615824699401855
+10:20:47,356 root INFO loss 0.913 = 0.909 + 0.0 + 0.004 avg prob of [ Rome] 0.5823444128036499
+10:20:47,745 root INFO loss 0.594 = 0.59 + 0.0 + 0.004 avg prob of [ Rome] 0.758240282535553
+10:20:48,132 root INFO loss 0.503 = 0.498 + 0.0 + 0.005 avg prob of [ Rome] 0.8295632600784302
+10:20:48,521 root INFO loss 0.452 = 0.447 + 0.0 + 0.005 avg prob of [ Rome] 0.8729707598686218
+10:20:48,908 root INFO loss 0.423 = 0.417 + 0.0 + 0.006 avg prob of [ Rome] 0.8998867273330688
+10:20:49,294 root INFO loss 0.406 = 0.399 + 0.0 + 0.006 avg prob of [ Rome] 0.9163028597831726
+10:20:49,684 root INFO loss 0.395 = 0.389 + 0.0 + 0.007 avg prob of [ Rome] 0.9264867901802063
+10:20:50,68 root INFO loss 0.389 = 0.382 + 0.0 + 0.007 avg prob of [ Rome] 0.9330471754074097
+10:20:50,458 root INFO loss 0.385 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.9374486207962036
+10:20:50,845 root INFO loss 0.382 = 0.374 + 0.0 + 0.007 avg prob of [ Rome] 0.9405130743980408
+10:20:51,234 root INFO loss 0.38 = 0.372 + 0.0 + 0.008 avg prob of [ Rome] 0.9427171349525452
+10:20:51,621 root INFO loss 0.379 = 0.37 + 0.0 + 0.008 avg prob of [ Rome] 0.9443494081497192
+10:20:52,8 root INFO loss 0.378 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9455893635749817
+10:20:52,397 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9465528130531311
+10:20:52,784 root INFO loss 0.376 = 0.367 + 0.0 + 0.009 avg prob of [ Rome] 0.9473162293434143
+10:20:52,857 root INFO Delta norm: 193.29803466796875
+10:20:52,864 root INFO Change in target norm: 96.7476806640625 to 189.08624267578125 => 92.33856201171875
+10:20:52,866 root INFO Division Factor: 0.22803139686584473
+10:20:52,869 root INFO Right vector norm: 847.6817016601562
+10:20:52,869 root INFO Right vector shape: torch.Size([1600])
+10:20:52,869 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+10:20:52,870 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+10:24:37,894 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:24:38,386 root INFO Cached context templates ['{}', 'The New York Giants. {}', "I'm not sure. {}", 'A man who was. {}', 'The following is from. {}', 'The new year has. {}', '"It\'s like. {}', 'The following are the. {}', 'The following blog post. {}', 'The first time I. {}', 'In a move that. {}', "I'm not sure if I've ever said. {}", 'A new survey shows that the number of women. {}', 'The UESPWiki – Your source for. {}', 'In the wake of the tragic shooting that claimed. {}', 'The following is a guest post by the brilliant. {}', '"The best way I can describe my experience. {}', 'A new report released today by The Center for. {}', 'The new generation of consoles has been around for. {}', 'The following blog post, unless otherwise noted,. {}', 'The following is a statement made by Dr.. {}']
+10:24:38,386 root INFO Computing left vector (u)...
+10:24:39,25 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:24:39,593 root INFO Left vector shape: torch.Size([6400])
+10:24:39,594 root INFO Computing right vector (v)
+10:24:39,602 root INFO Rewrite layer is 17
+10:24:39,602 root INFO Tying optimization objective to 47
+10:24:39,613 root INFO Recording initial value of v*
+10:24:39,805 root INFO loss 7.052 = 7.052 + 0.0 + 0.0 avg prob of [ Rome] 0.0010889065451920033
+10:24:40,171 root INFO loss 5.123 = 5.122 + 0.0 + 0.001 avg prob of [ Rome] 0.022737855091691017
+10:24:40,548 root INFO loss 3.966 = 3.964 + 0.0 + 0.002 avg prob of [ Rome] 0.1328057497739792
+10:24:40,933 root INFO loss 3.04 = 3.037 + 0.0 + 0.003 avg prob of [ Rome] 0.2344505786895752
+10:24:41,314 root INFO loss 1.656 = 1.653 + 0.0 + 0.003 avg prob of [ Rome] 0.3588460683822632
+10:24:41,689 root INFO loss 0.785 = 0.781 + 0.0 + 0.004 avg prob of [ Rome] 0.6320578455924988
+10:24:42,57 root INFO loss 0.595 = 0.59 + 0.0 + 0.004 avg prob of [ Rome] 0.7561299800872803
+10:24:42,421 root INFO loss 0.504 = 0.499 + 0.0 + 0.005 avg prob of [ Rome] 0.8284003734588623
+10:24:42,802 root INFO loss 0.444 = 0.439 + 0.0 + 0.006 avg prob of [ Rome] 0.8798366189002991
+10:24:43,180 root INFO loss 0.41 = 0.404 + 0.0 + 0.006 avg prob of [ Rome] 0.911709189414978
+10:24:43,563 root INFO loss 0.393 = 0.386 + 0.0 + 0.006 avg prob of [ Rome] 0.9288392663002014
+10:24:43,940 root INFO loss 0.384 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.937753438949585
+10:24:44,305 root INFO loss 0.379 = 0.372 + 0.0 + 0.007 avg prob of [ Rome] 0.9425787329673767
+10:24:44,671 root INFO loss 0.377 = 0.369 + 0.0 + 0.007 avg prob of [ Rome] 0.9453650116920471
+10:24:45,52 root INFO loss 0.375 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9470826983451843
+10:24:45,433 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9482043385505676
+10:24:45,817 root INFO loss 0.374 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9489734172821045
+10:24:46,194 root INFO loss 0.374 = 0.365 + 0.0 + 0.008 avg prob of [ Rome] 0.9495230317115784
+10:24:46,560 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9499295949935913
+10:24:46,928 root INFO loss 0.373 = 0.364 + 0.0 + 0.009 avg prob of [ Rome] 0.9502396583557129
+10:24:46,995 root INFO Delta norm: 192.05300903320312
+10:24:46,996 root INFO Change in target norm: 96.7476806640625 to 188.00021362304688 => 91.25253295898438
+10:24:46,997 root INFO Division Factor: 0.27001407742500305
+10:24:46,998 root INFO Right vector norm: 711.2703857421875
+10:24:46,999 root INFO Right vector shape: torch.Size([1600])
+10:24:46,999 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+10:24:46,999 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+10:32:07,147 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:32:07,753 root INFO Cached context templates ['{}', 'I was recently asked. {}', 'In the early days. {}', 'A new study from. {}', 'The following is an. {}', 'In a recent interview. {}', 'The U.S. {}', 'The following is a. {}', 'I have a lot. {}', 'In the early days. {}', 'In this episode,. {}', 'The U.S. Navy has "no. {}', 'I\'m a big fan of the "F. {}', 'The first of four new "Pantheon. {}', 'A new survey shows that most people in the. {}', 'The following is the full text of the letter. {}', "In this video, you'll see how to. {}", "I've been playing a lot of Magic lately. {}", 'I have always loved the smell of a freshly. {}', 'In a recent study published in The New England. {}', 'I was a little disappointed when I first saw. {}']
+10:32:07,753 root INFO Computing left vector (u)...
+10:32:08,402 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:32:08,536 root INFO Loading cached data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+10:38:13,781 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:38:14,281 root INFO Cached context templates ['{}', '"It\'s like. {}', 'The new generation of. {}', 'I was born and. {}', 'A man is in. {}', 'The New York Times. {}', '"We\'ve had. {}', '"I\'m not. {}', 'The first thing I. {}', '"This is a. {}', 'The first time I. {}', 'A new report from the United Nations Office on. {}', '"It was a big deal for me,". {}', "I've always thought that the best way to. {}", '"It is a matter of record that the. {}', "I'm going to be honest. I've. {}", '"The most common way to make a mistake. {}', 'The first of two planned "big-box. {}', 'The UESPWiki – Your source for. {}', 'The first time we saw this, we laughed. {}', '"We\'ve seen that the more people that. {}']
+10:38:14,281 root INFO Computing left vector (u)...
+10:38:14,921 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:38:15,53 root INFO Loading cached data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+10:38:15,545 root INFO Left vector shape: torch.Size([6400])
+10:38:15,547 root INFO Computing right vector (v)
+10:38:15,569 root INFO Rewrite layer is 17
+10:38:15,569 root INFO Tying optimization objective to 47
+10:38:15,578 root INFO Recording initial value of v*
+10:38:15,778 root INFO loss 6.839 = 6.839 + 0.0 + 0.0 avg prob of [ Rome] 0.0012574080610647798
+10:38:16,160 root INFO loss 4.722 = 4.721 + 0.0 + 0.001 avg prob of [ Rome] 0.024002762511372566
+10:38:16,540 root INFO loss 3.55 = 3.549 + 0.0 + 0.002 avg prob of [ Rome] 0.1556490659713745
+10:38:16,905 root INFO loss 2.871 = 2.869 + 0.0 + 0.003 avg prob of [ Rome] 0.2779395878314972
+10:38:17,276 root INFO loss 2.04 = 2.037 + 0.0 + 0.003 avg prob of [ Rome] 0.3696390986442566
+10:38:17,651 root INFO loss 0.961 = 0.957 + 0.0 + 0.004 avg prob of [ Rome] 0.5694953203201294
+10:38:18,30 root INFO loss 0.576 = 0.572 + 0.0 + 0.004 avg prob of [ Rome] 0.7705575227737427
+10:38:18,410 root INFO loss 0.494 = 0.489 + 0.0 + 0.005 avg prob of [ Rome] 0.8363831043243408
+10:38:18,789 root INFO loss 0.451 = 0.445 + 0.0 + 0.005 avg prob of [ Rome] 0.8737254738807678
+10:38:19,162 root INFO loss 0.424 = 0.418 + 0.0 + 0.006 avg prob of [ Rome] 0.8986364006996155
+10:38:19,529 root INFO loss 0.407 = 0.4 + 0.0 + 0.006 avg prob of [ Rome] 0.91509610414505
+10:38:19,895 root INFO loss 0.396 = 0.389 + 0.0 + 0.007 avg prob of [ Rome] 0.9258891940116882
+10:38:20,275 root INFO loss 0.389 = 0.382 + 0.0 + 0.007 avg prob of [ Rome] 0.9330419898033142
+10:38:20,656 root INFO loss 0.384 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.937871515750885
+10:38:21,35 root INFO loss 0.381 = 0.373 + 0.0 + 0.008 avg prob of [ Rome] 0.9412047863006592
+10:38:21,406 root INFO loss 0.379 = 0.371 + 0.0 + 0.008 avg prob of [ Rome] 0.9435606002807617
+10:38:21,773 root INFO loss 0.378 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9452658295631409
+10:38:22,144 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9465284943580627
+10:38:22,516 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9474833607673645
+10:38:22,896 root INFO loss 0.375 = 0.366 + 0.0 + 0.009 avg prob of [ Rome] 0.9482191205024719
+10:38:22,959 root INFO Delta norm: 194.8020477294922
+10:38:22,966 root INFO Change in target norm: 96.7476806640625 to 190.64031982421875 => 93.89263916015625
+10:38:22,968 root INFO Division Factor: 0.3574889898300171
+10:38:22,970 root INFO Right vector norm: 544.9176025390625
+10:38:22,971 root INFO Right vector shape: torch.Size([1600])
+10:38:22,971 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+10:38:22,972 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+10:54:59,104 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:54:59,675 root INFO Cached context templates ['{}', 'A new study suggests. {}', 'The first thing you. {}', 'In a recent article. {}', '"We have no. {}', 'A few years ago. {}', '"The first thing. {}', 'The first thing you. {}', '"I think the. {}', '"I think that. {}', 'The U.S. {}', 'The following blog post, unless otherwise noted,. {}', 'A woman was shot and killed after she opened. {}', 'In a new interview, President Obama said that. {}', '"The most powerful thing a person can do. {}', 'The first time I saw this, it was. {}', '"I think it\'s very difficult to say. {}', 'A woman who was shot in the leg during. {}', 'In a new interview, the actor reveals his. {}', "I'm not sure if this will be the. {}", 'The new season of The Bachelor airs on ABC. {}']
+10:54:59,675 root INFO Computing left vector (u)...
+10:55:00,319 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:55:00,456 root INFO Loading cached data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+10:55:01,4 root INFO Left vector shape: torch.Size([6400])
+10:55:01,5 root INFO Computing right vector (v)
+10:55:01,18 root INFO Rewrite layer is 17
+10:55:01,18 root INFO Tying optimization objective to 47
+10:55:01,27 root INFO Recording initial value of v*
+10:55:01,236 root INFO loss 7.17 = 7.17 + 0.0 + 0.0 avg prob of [ Rome] 0.0009962922194972634
+10:55:01,618 root INFO loss 5.207 = 5.206 + 0.0 + 0.001 avg prob of [ Rome] 0.021474365144968033
+10:55:02,1 root INFO loss 4.053 = 4.051 + 0.0 + 0.002 avg prob of [ Rome] 0.1370895951986313
+10:55:02,383 root INFO loss 3.276 = 3.273 + 0.0 + 0.003 avg prob of [ Rome] 0.21576373279094696
+10:55:02,762 root INFO loss 2.07 = 2.067 + 0.0 + 0.003 avg prob of [ Rome] 0.2950360178947449
+10:55:03,154 root INFO loss 0.928 = 0.924 + 0.0 + 0.004 avg prob of [ Rome] 0.564490556716919
+10:55:03,546 root INFO loss 0.654 = 0.65 + 0.0 + 0.004 avg prob of [ Rome] 0.7188901305198669
+10:55:03,938 root INFO loss 0.537 = 0.532 + 0.0 + 0.005 avg prob of [ Rome] 0.8036711812019348
+10:55:04,323 root INFO loss 0.469 = 0.464 + 0.0 + 0.005 avg prob of [ Rome] 0.8588814735412598
+10:55:04,701 root INFO loss 0.428 = 0.422 + 0.0 + 0.006 avg prob of [ Rome] 0.8953927755355835
+10:55:05,83 root INFO loss 0.405 = 0.398 + 0.0 + 0.006 avg prob of [ Rome] 0.9175229668617249
+10:55:05,464 root INFO loss 0.392 = 0.385 + 0.0 + 0.007 avg prob of [ Rome] 0.9301917552947998
+10:55:05,855 root INFO loss 0.384 = 0.377 + 0.0 + 0.007 avg prob of [ Rome] 0.9374535083770752
+10:55:06,247 root INFO loss 0.38 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.941765308380127
+10:55:06,640 root INFO loss 0.378 = 0.37 + 0.0 + 0.008 avg prob of [ Rome] 0.9444462060928345
+10:55:07,35 root INFO loss 0.377 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9461931586265564
+10:55:07,410 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9473826289176941
+10:55:07,793 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9482253193855286
+10:55:08,175 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9488438367843628
+10:55:08,559 root INFO loss 0.374 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9493122100830078
+10:55:08,626 root INFO Delta norm: 192.2636260986328
+10:55:08,633 root INFO Change in target norm: 96.7476806640625 to 188.23196411132812 => 91.48428344726562
+10:55:08,633 root INFO Division Factor: 0.35500624775886536
+10:55:08,633 root INFO Right vector norm: 541.5781860351562
+10:55:08,633 root INFO Right vector shape: torch.Size([1600])
+10:55:08,634 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+10:55:08,634 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+10:54:02,148 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+10:54:02,694 root INFO Cached context templates ['{}', 'The New York Times. {}', 'The New York Knicks. {}', 'The following is a. {}', 'In a world where. {}', '"We\'re not. {}', 'In this episode of. {}', "I'm not sure. {}", 'The New York Times. {}', 'The new season for. {}', 'The following blog post. {}', 'In an interview with the New York Observer,. {}', 'The New York Times has The New York Times. {}', 'The U.S. Department of Justice (. {}', "I'm not sure what's more amazing:. {}", 'A new poll from the Pew Research Center released. {}', 'A new study suggests that people who have sex. {}', 'A man has died after a shooting in the. {}', '"This is the first time the government has. {}', 'The new "Buffy" season is in. {}', "A new poll shows that most Canadians don't. {}"]
+10:54:02,695 root INFO Computing left vector (u)...
+10:54:03,88 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+10:54:04,553 root INFO Loading cached data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+10:54:07,829 root INFO Left vector shape: torch.Size([6400])
+10:54:07,831 root INFO Computing right vector (v)
+10:54:07,836 root INFO Rewrite layer is 17
+10:54:07,836 root INFO Tying optimization objective to 47
+10:54:07,847 root INFO Recording initial value of v*
+10:54:07,981 root INFO loss 7.208 = 7.208 + 0.0 + 0.0 avg prob of [ Rome] 0.0009562738123349845
+10:54:08,288 root INFO loss 5.311 = 5.31 + 0.0 + 0.001 avg prob of [ Rome] 0.021442368626594543
+10:54:08,479 root INFO loss 4.11 = 4.108 + 0.0 + 0.002 avg prob of [ Rome] 0.1436871439218521
+10:54:08,667 root INFO loss 3.186 = 3.184 + 0.0 + 0.003 avg prob of [ Rome] 0.2158181369304657
+10:54:08,855 root INFO loss 1.769 = 1.766 + 0.0 + 0.003 avg prob of [ Rome] 0.3234666585922241
+10:54:09,44 root INFO loss 0.862 = 0.858 + 0.0 + 0.004 avg prob of [ Rome] 0.5882762670516968
+10:54:09,233 root INFO loss 0.658 = 0.654 + 0.0 + 0.004 avg prob of [ Rome] 0.7128671407699585
+10:54:09,423 root INFO loss 0.545 = 0.54 + 0.0 + 0.005 avg prob of [ Rome] 0.7968339323997498
+10:54:09,613 root INFO loss 0.472 = 0.466 + 0.0 + 0.005 avg prob of [ Rome] 0.8573646545410156
+10:54:09,800 root INFO loss 0.428 = 0.422 + 0.0 + 0.006 avg prob of [ Rome] 0.8956360816955566
+10:54:09,987 root INFO loss 0.405 = 0.398 + 0.0 + 0.006 avg prob of [ Rome] 0.9177013635635376
+10:54:10,174 root INFO loss 0.392 = 0.385 + 0.0 + 0.007 avg prob of [ Rome] 0.9301427602767944
+10:54:10,362 root INFO loss 0.385 = 0.378 + 0.0 + 0.007 avg prob of [ Rome] 0.9372721314430237
+10:54:10,550 root INFO loss 0.381 = 0.373 + 0.0 + 0.007 avg prob of [ Rome] 0.94151771068573
+10:54:10,737 root INFO loss 0.378 = 0.37 + 0.0 + 0.008 avg prob of [ Rome] 0.9441757202148438
+10:54:10,925 root INFO loss 0.377 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9459279775619507
+10:54:11,112 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9471389651298523
+10:54:11,300 root INFO loss 0.375 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9480105042457581
+10:54:11,488 root INFO loss 0.375 = 0.366 + 0.0 + 0.009 avg prob of [ Rome] 0.9486598372459412
+10:54:11,675 root INFO loss 0.375 = 0.365 + 0.0 + 0.009 avg prob of [ Rome] 0.9491575360298157
+10:54:11,731 root INFO Delta norm: 191.39492797851562
+10:54:11,731 root INFO Change in target norm: 96.7476806640625 to 187.4801788330078 => 90.73249816894531
+10:54:11,731 root INFO Division Factor: 0.4625328779220581
+10:54:11,731 root INFO Right vector norm: 413.7974548339844
+10:54:11,732 root INFO Right vector shape: torch.Size([1600])
+10:54:11,732 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+10:54:11,733 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+11:09:48,673 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+11:09:48,954 root INFO Cached context templates ['{}', 'In a recent interview. {}', 'The following is a. {}', 'The U.S. {}', '"It is a. {}', 'The first time I. {}', 'The New Orleans Saints. {}', 'In this article we. {}', 'In this episode of. {}', '"We have a. {}', 'I have been playing. {}', 'The U.S. Supreme Court has been. {}', '"The only thing you can say to a. {}', 'The following blog post, unless otherwise noted,. {}', 'The first time a woman was allowed to enter. {}', "The first time I saw the word 'f. {}", 'A man who had his penis amputated after. {}', 'A man who was found shot to death inside. {}', 'The U.S. Navy is considering an. {}', 'A few weeks ago a friend of mine asked. {}', 'A new study from the University of California San. {}']
+11:09:48,954 root INFO Computing left vector (u)...
+11:09:49,330 root INFO Retrieving inverse covariance statistics for gpt2-xl @ transformer.h.17.mlp.c_proj. The result will be cached to avoid repetitive computation.
+11:09:49,460 root INFO Loading cached data/stats/gpt2-xl/wikipedia_stats/transformer.h.17.mlp.c_proj_float32_mom2_100000.npz
+11:09:49,674 root INFO Left vector shape: torch.Size([6400])
+11:09:49,675 root INFO Computing right vector (v)
+11:09:49,677 root INFO Rewrite layer is 17
+11:09:49,677 root INFO Tying optimization objective to 47
+11:09:49,686 root INFO Recording initial value of v*
+11:09:49,780 root INFO loss 7.148 = 7.148 + 0.0 + 0.0 avg prob of [ Rome] 0.0009019682183861732
+11:09:49,969 root INFO loss 5.12 = 5.119 + 0.0 + 0.001 avg prob of [ Rome] 0.019901180639863014
+11:09:50,158 root INFO loss 3.934 = 3.932 + 0.0 + 0.002 avg prob of [ Rome] 0.14803850650787354
+11:09:50,346 root INFO loss 3.2 = 3.197 + 0.0 + 0.003 avg prob of [ Rome] 0.23246969282627106
+11:09:50,535 root INFO loss 2.083 = 2.08 + 0.0 + 0.003 avg prob of [ Rome] 0.32029205560684204
+11:09:50,724 root INFO loss 0.915 = 0.911 + 0.0 + 0.004 avg prob of [ Rome] 0.573237955570221
+11:09:50,912 root INFO loss 0.609 = 0.605 + 0.0 + 0.004 avg prob of [ Rome] 0.7483320236206055
+11:09:51,101 root INFO loss 0.504 = 0.499 + 0.0 + 0.005 avg prob of [ Rome] 0.8296231031417847
+11:09:51,290 root INFO loss 0.451 = 0.445 + 0.0 + 0.005 avg prob of [ Rome] 0.875205934047699
+11:09:51,478 root INFO loss 0.42 = 0.414 + 0.0 + 0.006 avg prob of [ Rome] 0.903067946434021
+11:09:51,667 root INFO loss 0.402 = 0.396 + 0.0 + 0.006 avg prob of [ Rome] 0.9199579358100891
+11:09:51,855 root INFO loss 0.392 = 0.385 + 0.0 + 0.007 avg prob of [ Rome] 0.9302276372909546
+11:09:52,43 root INFO loss 0.385 = 0.378 + 0.0 + 0.007 avg prob of [ Rome] 0.9366145730018616
+11:09:52,232 root INFO loss 0.381 = 0.374 + 0.0 + 0.007 avg prob of [ Rome] 0.9407119154930115
+11:09:52,421 root INFO loss 0.379 = 0.371 + 0.0 + 0.008 avg prob of [ Rome] 0.9434310793876648
+11:09:52,611 root INFO loss 0.377 = 0.369 + 0.0 + 0.008 avg prob of [ Rome] 0.9452981948852539
+11:09:52,799 root INFO loss 0.376 = 0.368 + 0.0 + 0.008 avg prob of [ Rome] 0.9466220736503601
+11:09:52,988 root INFO loss 0.376 = 0.367 + 0.0 + 0.008 avg prob of [ Rome] 0.9475895166397095
+11:09:53,175 root INFO loss 0.375 = 0.366 + 0.0 + 0.008 avg prob of [ Rome] 0.9483159780502319
+11:09:53,362 root INFO loss 0.375 = 0.366 + 0.0 + 0.009 avg prob of [ Rome] 0.9488747119903564
+11:09:53,398 root INFO Delta norm: 191.4222412109375
+11:09:53,399 root INFO Change in target norm: 96.7476806640625 to 187.30372619628906 => 90.55604553222656
+11:09:53,399 root INFO Division Factor: 0.22802209854125977
+11:09:53,399 root INFO Right vector norm: 839.4899291992188
+11:09:53,399 root INFO Right vector shape: torch.Size([1600])
+11:09:53,399 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+11:09:53,400 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
+11:13:28,370 root INFO Executing ROME algorithm for the update: [The Eiff{} Tower is in the city of] -> [ Rome]
+11:13:28,385 root INFO Computing left vector (u)...
+11:13:28,769 root INFO Left vector shape: torch.Size([6400])
+11:13:28,770 root INFO Computing right vector (v)
+11:13:28,773 root INFO Rewrite layer is 17
+11:13:28,773 root INFO Tying optimization objective to 47
+11:13:28,785 root INFO Recording initial value of v*
+11:13:28,874 root INFO loss 0.013 = 0.013 + 0.0 + 0.0 avg prob of [ Rome] 0.9880034327507019
+11:13:28,911 root INFO Delta norm: 106.94756317138672
+11:13:28,911 root INFO Change in target norm: 149.56675720214844 to 149.56675720214844 => 0.0
+11:13:28,911 root INFO Division Factor: 0.22802209854125977
+11:13:28,911 root INFO Right vector norm: 469.0227966308594
+11:13:28,912 root INFO Right vector shape: torch.Size([1600])
+11:13:28,912 root INFO Deltas successfully computed for ['transformer.h.17.mlp.c_proj.weight']
+11:13:28,912 root INFO New weights successfully inserted into ['transformer.h.17.mlp.c_proj.weight']
