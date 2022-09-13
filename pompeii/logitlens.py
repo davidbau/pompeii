@@ -9,7 +9,7 @@ from .rome.util import nethook
 
 def get_model_tokenizer(model_name):
 
-    model = AutoModelForCausalLM.from_pretrained(model_name, low_cpu_mem_usage=False).to("cuda")
+    model = AutoModelForCausalLM.from_pretrained(model_name, low_cpu_mem_usage=True).to("cuda")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     
     tokenizer.pad_token = tokenizer.eos_token
