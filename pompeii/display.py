@@ -228,6 +228,8 @@ class LogitLensSession:
 
         self.display_logit_lens_rewrite(top_probs, top_words)
 
+        self.rewrite_info.innerHTML = ''
+
         self.display()
 
     def display_logit_lens_rewrite(self, top_probs, top_words):
@@ -248,9 +250,10 @@ class LogitLensSession:
 
             self.logit_lens_layout[1][i] = _row
 
-        self.rewrite_info.innerHTML = ''
 
-    def display_logit_lens(self, top_probs, top_words):
+    def display_logit_lens_outer(self):
+
+        hidden_states, top_probs, top_words = self.process(self.model)
 
         # header line
         header_line = [ 
@@ -267,9 +270,15 @@ class LogitLensSession:
         self.logit_lens_layout = logit_lens_layout
         self.display_logit_lens_inner(top_probs, top_words)
 
-    def display_logit_lens_inner(self, top_probs, top_words):
+    def display_logit_lens_inner(self, top_probs=None, top_words=None):
+
+        if top_probs is None or top_words is None:
+
+            hidden_states, top_probs, top_words = self.process(self.model)
 
         for layer, probabilites, words in zip(range(top_probs.shape[0]), top_probs, top_words):
+
+            self.logit_lens_layout[1][layer] = [self.logit_lens_layout[1][layer][0]]
 
             cells = []
             for token_idx, (_probabilites, _words) in enumerate(zip(probabilites, words)):
@@ -278,7 +287,14 @@ class LogitLensSession:
 
             self.logit_lens_layout[1][layer].extend(cells)
 
-    def hidden_state_change(self):
+        if self.model_rewrite:
+
+            hidden_states, top_probs, top_words = self.process(self.model_rewrite)
+
+            self.display_logit_lens_rewrite(top_probs, top_words)
+
+
+    def set_hidden_state_function(self):
 
         if self.hidden_state_function_dropdown.value == "Layer":
             self.color = [0, 0, 255]
@@ -299,22 +315,17 @@ class LogitLensSession:
 
         self.color_fn = color_fn
 
+
+    def hidden_state_change(self):
+
+        self.set_hidden_state_function()
+
         if self.prompt:
-            self.update()
+
+            self.display_logit_lens_inner()
+
+            self.display()
             
-    def update(self):
-
-        hidden_states, top_probs, top_words = self.process(self.model)
-
-        self.display_logit_lens(top_probs, top_words)
-
-        if self.model_rewrite:
-
-            hidden_states, top_probs, top_words = self.process(self.model_rewrite)
-            self.display_logit_lens_rewrite(top_probs, top_words)
-
-        self.display()
-
     def run(self):
 
         self.model_rewrite = None
@@ -324,7 +335,11 @@ class LogitLensSession:
         self.prompt = self.text_input.value
         self.prompt_tokens = [self.tokenizer.decode(token) for token in self.tokenizer.encode(self.prompt)]
 
-        self.hidden_state_change()
+        self.set_hidden_state_function()
+
+        self.display_logit_lens_outer()
+
+        self.display()
 
     def process(self, model, topk=5):
 
