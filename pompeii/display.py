@@ -200,7 +200,7 @@ class LogitLensSession:
                 if not isinstance(button, baukit.Button):
                     continue
                 if i == row_idx and ii == column_idx:
-                    token_input = baukit.Textbox(button.label, style=div.style, attrs=div.attrs)
+                    token_input = baukit.Textbox(button.label, style=button.style, attrs=button.attrs)
                     token_input.on('enter', partial(self.rewrite, token_input, layers, token, rome_location))
 
                     row[ii] = token_input
