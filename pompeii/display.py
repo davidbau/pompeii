@@ -233,6 +233,8 @@ class LogitLensSession:
         
         self.display_logit_lens_inner()
 
+        self.logit_lens_layout[0][0][0].style += baukit.show.Style(flex='.5 1 0')
+
         self.rewrite_info.innerHTML = ''
 
         self.display()
