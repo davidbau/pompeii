@@ -168,15 +168,22 @@ class LogitLensSession:
             div = baukit.Div(button.label, style=button.style)
             self.logit_lens_layout[0][0][i] = div
 
-        for i, row in enumerate(self.logit_lens_layout[1]):
-            for ii, div in enumerate(row):
-                if ii == 0:
-                    continue
+        # for i, row in enumerate(self.logit_lens_layout[1]):
+        #     for ii, div in enumerate(row):
+        #         if ii == 0:
+        #             continue
 
-                button = baukit.Button(div.innerHTML, style=div.style, attrs=div.attrs)
-                button.on('click', partial(self.rewrite_select_new_token, layers, token, i, ii))
+        #         button = baukit.Button(div.innerHTML, style=div.style, attrs=div.attrs)
+        #         button.on('click', partial(self.rewrite_select_new_token, layers, token, i, ii))
                 
-                row[ii] = button
+        #         row[ii] = button
+
+        
+
+        button = baukit.Button(div.innerHTML, style=div.style, attrs=div.attrs)
+        button.on('click', partial(self.rewrite_select_new_token, layers, token, len(self.logit_lens_layout[1]) - 1, len(self.logit_lens_layout[1][-1]) - 1))
+        
+        self.logit_lens_layout[1][-1][-1] = button
         
         self.rewrite_button.style += baukit.show.Style(display='none')
         
@@ -224,9 +231,7 @@ class LogitLensSession:
 
         self.model_rewrite = rewrite(layers, token.idx, token_input.value, self.prompt, self.model, self.tokenizer, self.model_name)
         
-        hidden_states, top_probs, top_words = self.process(self.model_rewrite)
-
-        self.display_logit_lens_rewrite(top_probs, top_words)
+        self.display_logit_lens_inner()
 
         self.rewrite_info.innerHTML = ''
 
