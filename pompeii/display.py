@@ -197,7 +197,7 @@ class LogitLensSession:
 
         for i, row in enumerate(self.logit_lens_layout[1]):
             for ii, button in enumerate(row):
-                if ii == 0:
+                if not isinstance(baukit.Button):
                     continue
                 if i == row_idx and ii == column_idx:
                     token_input = baukit.Textbox(button.label, style=div.style, attrs=div.attrs)
