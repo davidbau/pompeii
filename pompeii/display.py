@@ -178,7 +178,7 @@ class LogitLensSession:
                 
         #         row[ii] = button
 
-        
+        div = self.logit_lens_layout[1][-1][-1]
 
         button = baukit.Button(div.innerHTML, style=div.style, attrs=div.attrs)
         button.on('click', partial(self.rewrite_select_new_token, layers, token, len(self.logit_lens_layout[1]) - 1, len(self.logit_lens_layout[1][-1]) - 1))
